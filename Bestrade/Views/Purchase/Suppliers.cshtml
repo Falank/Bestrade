@@ -1,0 +1,22 @@
+﻿<div>
+    @model List<Bestrade.Models.Supplier>
+    @{
+        ViewBag.Title = "Supplier";
+    }
+    <table class="table">
+        <tr>
+            <th>Suppliers</th>
+        </tr>
+        <tr>
+            <td>
+                <ul class="list-unstyled">
+                    @foreach (var a in Model)
+                    {
+                        <li>@Html.ActionLink(a.supplier_name, "PurchaseFromSupplier", new { supplier_name = a.supplier_name })</li>
+                    }
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+

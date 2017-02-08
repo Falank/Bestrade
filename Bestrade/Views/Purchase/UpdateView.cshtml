@@ -1,0 +1,34 @@
+﻿@model Bestrade.Models.Purchase
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Update Purchase";
+}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+        <div class="well">
+            @using (Html.BeginForm("UpdatePurchase", "Purchase", FormMethod.Post))
+            {
+                <table class="table">
+                    <tr>
+                        <td>Purchase ID</td>
+                        <td>@Html.TextBox("purchase_id", Model.purchase_id, new { @readonly = true, @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>Date</td>
+                        <td>@Html.TextBox("purchase_date", Model.purchase_date.ToShortDateString(), new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>Supplier Name</td>
+                        <td>@Html.TextBox("supplier_name", Model.supplier_name, new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="提交" /></td>
+                    </tr>
+                </table>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,103 @@
+﻿@model List<Bestrade.Models.Pack>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Ship Pack to FBA";
+}
+<div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-6">
+            <div class="well">
+                <table class="table">
+                    <tr>
+                        <th>Purchase Id</th>
+                        <th>SKU</th>
+                        <th>unit cost</th>
+                        <th>P QTY</th>
+                        <th>P Remark</th>
+                        <th>S ID</th>
+                        <th>S QTY</th>
+                        <th>S Remark</th>
+                    </tr>
+                    @foreach (var a in Model)
+                    {
+                        <tr>
+                            <td>@a.purchase_id</td>
+                            <td>@a.sku</td>
+                            <td>@a.unit_cost</td>
+                            <td>@a.qty</td>
+                            @if (a.pack_remark != null && a.pack_remark.Length != 0)
+                            {
+                                <td>@Html.ActionLink("Click to View", "RemarkView", "Pack", new { purchase_id = a.purchase_id, sku = a.sku }, null)</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            <td>@a.shipment_id</td>
+                            <td>@a.shipment_qty</td>
+                            @if (a.shipment_remark != null && a.shipment_remark.Length != 0)
+                            {
+                                <td>@Html.ActionLink("Click to View", "RemarkView", "Shipment", new { purchase_id = a.purchase_id, sku = a.sku, shipment_id = a.shipment_id }, null)</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="well">
+                @using (Html.BeginForm("AddPackShipment", "Pack", FormMethod.Post))
+                {
+                    <table class="table">
+                        <tr>
+                            <td>Purchase ID</td>
+                            <td>@Html.TextBox("purchase_id", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>SKU</td>
+                            <td>@Html.TextBox("sku", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>Shipment ID</td>
+                            <td>@Html.TextBox("shipment_id", ViewData["shipment_id"], new { @readonly = "true", @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>Shipment QTY</td>
+                            <td>@Html.TextBox("shipment_qty", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>Shipment Reamrk</td>
+                            <td>@Html.TextBox("shipment_remark", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="提交" /></td>
+                        </tr>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+@*    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+            @Ajax.ActionLink("Display All Packs", "Index", "Pack", new { }, new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "all", InsertionMode = InsertionMode.Replace }, new { @id = "show" })
+            <a id="hide" style="cursor: pointer; margin-left: 40px">Hide All Packs</a>
+        </div>
+    </div>
+    <div id="all"></div>*@
+</div>
+@*<script>
+    $('#hide').click(function () {
+        $('#all').hide();
+    });
+    $('#show').click(function () {
+        $('#all').show();
+    });
+</script>*@

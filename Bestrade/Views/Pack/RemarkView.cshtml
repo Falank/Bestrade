@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Pack Remark";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Bestrade.Models.Pack
+<div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <div class="well">
+                <table class="table" style="width: 300px">
+                    <tr>
+                        <td>Purchase ID</td>
+                        <td>@Model.purchase_id</td>
+                    </tr>
+                    <tr>
+                        <td>SKU</td>
+                        <td>@Model.sku</td>
+                    </tr>
+                    <tr>
+                        <td>Unit Cost</td>
+                        <td>@Model.unit_cost</td>
+                    </tr>
+                    <tr>
+                        <td>QTY</td>
+                        <td>@Model.qty</td>
+                    </tr>
+                </table>
+                <div>
+                    Pack Remark
+                        <br />
+                    <pre style="white-space: normal">
+                            @Model.pack_remark
+                         </pre>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

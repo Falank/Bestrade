@@ -1,0 +1,39 @@
+﻿@model Bestrade.Models.Shipment
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Shipment";
+}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+        <div class="well">
+
+            @using (Html.BeginForm("UpdateShipment", "Shipment", FormMethod.Post))
+            {
+                <table class="table">
+                    <tr>
+                        <td>ID</td>
+                        <td>@Html.TextBox("id", Model.shipment_id, new { @readonly = true, @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>Date</td>
+                        <td>@Html.TextBox("date", Model.shipping_date.ToShortDateString(), new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>Company</td>
+                        <td>@Html.TextBox("company", Model.shipping_company, new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>Cost</td>
+                        <td>@Html.TextBox("cost", Model.shippment_cost, new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="提交" /></td>
+                    </tr>
+                </table>
+            }
+        </div>
+    </div>
+</div>
+

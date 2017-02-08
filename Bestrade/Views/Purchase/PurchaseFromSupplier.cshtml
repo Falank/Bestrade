@@ -1,0 +1,52 @@
+﻿@model List<Bestrade.Models.Purchase>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = ViewData["supplier_name"];
+}
+<div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <div class="well">
+                <table class="table">
+                    <tr>
+                        <th>Purchase ID</th>
+                        <th>Purchase Date</th>
+                    </tr>
+                    @foreach (var a in Model)
+                    {
+                        <tr>
+                            <td>@Html.ActionLink(a.purchase_id, "PackFromPurchase", "Pack", new { purchase_id = a.purchase_id }, null)</td>
+                            <td>@a.purchase_date.ToString("d")</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="well">
+                @using (Html.BeginForm("AddPurchase", "Purchase", FormMethod.Post))
+                {
+                    <table class="table">
+                        <tr>
+                            <td>Purchase ID</td>
+                            <td>@Html.TextBox("purchase_id", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>Date</td>
+                            <td>@Html.TextBox("purchase_date", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>Supplier Name</td>
+                            <td>@Html.TextBox("supplier_name", ViewData["supplier_name"], new { @readonly = "true", @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="提交" /></td>
+                        </tr>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+</div>

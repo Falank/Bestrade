@@ -1,0 +1,255 @@
+d:\Projects\Bestrade\Bestrade\bin\Bestrade.dll
+d:\Projects\Bestrade\Bestrade\bin\Bestrade.pdb
+d:\Projects\Bestrade\Bestrade\bin\Microsoft.Web.Infrastructure.dll
+d:\Projects\Bestrade\Bestrade\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+d:\Projects\Bestrade\Bestrade\bin\Newtonsoft.Json.dll
+d:\Projects\Bestrade\Bestrade\bin\System.Net.Http.Formatting.dll
+d:\Projects\Bestrade\Bestrade\bin\System.Web.Helpers.dll
+d:\Projects\Bestrade\Bestrade\bin\System.Web.Http.dll
+d:\Projects\Bestrade\Bestrade\bin\System.Web.Http.WebHost.dll
+d:\Projects\Bestrade\Bestrade\bin\System.Web.Mvc.dll
+d:\Projects\Bestrade\Bestrade\bin\System.Web.Razor.dll
+d:\Projects\Bestrade\Bestrade\bin\System.Web.WebPages.Deployment.dll
+d:\Projects\Bestrade\Bestrade\bin\System.Web.WebPages.dll
+d:\Projects\Bestrade\Bestrade\bin\System.Web.WebPages.Razor.dll
+d:\Projects\Bestrade\Bestrade\bin\Newtonsoft.Json.xml
+d:\Projects\Bestrade\Bestrade\bin\System.Net.Http.Formatting.xml
+d:\Projects\Bestrade\Bestrade\bin\System.Web.Helpers.xml
+d:\Projects\Bestrade\Bestrade\bin\System.Web.Http.xml
+d:\Projects\Bestrade\Bestrade\bin\System.Web.Http.WebHost.xml
+d:\Projects\Bestrade\Bestrade\bin\System.Web.Mvc.xml
+d:\Projects\Bestrade\Bestrade\bin\System.Web.Razor.xml
+d:\Projects\Bestrade\Bestrade\bin\System.Web.WebPages.xml
+d:\Projects\Bestrade\Bestrade\bin\System.Web.WebPages.Deployment.xml
+d:\Projects\Bestrade\Bestrade\bin\System.Web.WebPages.Razor.xml
+d:\Projects\Bestrade\Bestrade\obj\Debug\Bestrade.dll
+d:\Projects\Bestrade\Bestrade\obj\Debug\Bestrade.pdb
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\Bestrade.dll.config
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\Bestrade.dll
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\Bestrade.pdb
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\Newtonsoft.Json.dll
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\System.Net.Http.Formatting.dll
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\System.Web.Helpers.dll
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\System.Web.Http.dll
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\System.Web.Http.WebHost.dll
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\System.Web.Mvc.dll
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\System.Web.Razor.dll
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\System.Web.WebPages.Deployment.dll
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\System.Web.WebPages.dll
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\System.Web.WebPages.Razor.dll
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\Newtonsoft.Json.xml
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\System.Net.Http.Formatting.xml
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\System.Web.Helpers.xml
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\System.Web.Http.xml
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\System.Web.Http.WebHost.xml
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\System.Web.Mvc.xml
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\System.Web.Razor.xml
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\System.Web.WebPages.xml
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\System.Web.WebPages.Deployment.xml
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\System.Web.WebPages.Razor.xml
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\obj\Debug\Bestrade.dll
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\obj\Debug\Bestrade.pdb
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\EntityFramework.dll
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\EntityFramework.SqlServer.dll
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\EntityFramework.xml
+C:\Users\v-ruifan\Downloads\Bestrade\Bestrade\bin\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\Bestrade.dll
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\Bestrade.pdb
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\EntityFramework.dll
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\System.Net.Http.Formatting.dll
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\System.Web.Helpers.dll
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\System.Web.Http.dll
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\System.Web.Http.WebHost.dll
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\System.Web.Mvc.dll
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\System.Web.Razor.dll
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\System.Web.WebPages.dll
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\System.Web.WebPages.Razor.dll
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\EntityFramework.xml
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\System.Net.Http.Formatting.xml
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\System.Web.Helpers.xml
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\System.Web.Http.xml
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\System.Web.Http.WebHost.xml
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\System.Web.Mvc.xml
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\System.Web.Razor.xml
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\System.Web.WebPages.xml
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\bin\System.Web.WebPages.Razor.xml
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\obj\Debug\Bestrade.dll
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\obj\Debug\Bestrade.pdb
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\Bestrade.dll.config
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\Bestrade.dll
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\Bestrade.pdb
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\EntityFramework.dll
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\EntityFramework.SqlServer.dll
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\Newtonsoft.Json.dll
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\System.Net.Http.Formatting.dll
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\System.Web.Helpers.dll
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\System.Web.Http.dll
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\System.Web.Http.WebHost.dll
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\System.Web.Mvc.dll
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\System.Web.Razor.dll
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\System.Web.WebPages.Deployment.dll
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\System.Web.WebPages.dll
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\System.Web.WebPages.Razor.dll
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\EntityFramework.xml
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\EntityFramework.SqlServer.xml
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\Newtonsoft.Json.xml
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\System.Net.Http.Formatting.xml
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\System.Web.Helpers.xml
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\System.Web.Http.xml
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\System.Web.Http.WebHost.xml
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\System.Web.Mvc.xml
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\System.Web.Razor.xml
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\System.Web.WebPages.xml
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\System.Web.WebPages.Deployment.xml
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\bin\System.Web.WebPages.Razor.xml
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\obj\Debug\Bestrade.dll
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\obj\Debug\Bestrade.pdb
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\obj\Debug\Bestrade.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\obj\Debug\Bestrade.Migrations._1st.resources
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\obj\Debug\Bestrade.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\Bestrade\Bestrade\obj\Debug\Bestrade.csprojResolveAssemblyReference.cache
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\obj\Debug\Bestrade.csprojResolveAssemblyReference.cache
+C:\Users\v-ruifan\Desktop\Bestrade\Bestrade\obj\Debug\Bestrade.Migrations._1st.resources
+D:\用户目录\下载\Bestrade\Bestrade\bin\Bestrade.dll
+D:\用户目录\下载\Bestrade\Bestrade\bin\Bestrade.pdb
+D:\用户目录\下载\Bestrade\Bestrade\bin\EntityFramework.dll
+D:\用户目录\下载\Bestrade\Bestrade\bin\EntityFramework.SqlServer.dll
+D:\用户目录\下载\Bestrade\Bestrade\bin\Microsoft.Web.Infrastructure.dll
+D:\用户目录\下载\Bestrade\Bestrade\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\用户目录\下载\Bestrade\Bestrade\bin\Newtonsoft.Json.dll
+D:\用户目录\下载\Bestrade\Bestrade\bin\System.Net.Http.Formatting.dll
+D:\用户目录\下载\Bestrade\Bestrade\bin\System.Web.Helpers.dll
+D:\用户目录\下载\Bestrade\Bestrade\bin\System.Web.Http.dll
+D:\用户目录\下载\Bestrade\Bestrade\bin\System.Web.Http.WebHost.dll
+D:\用户目录\下载\Bestrade\Bestrade\bin\System.Web.Mvc.dll
+D:\用户目录\下载\Bestrade\Bestrade\bin\System.Web.Razor.dll
+D:\用户目录\下载\Bestrade\Bestrade\bin\System.Web.WebPages.Deployment.dll
+D:\用户目录\下载\Bestrade\Bestrade\bin\System.Web.WebPages.dll
+D:\用户目录\下载\Bestrade\Bestrade\bin\System.Web.WebPages.Razor.dll
+D:\用户目录\下载\Bestrade\Bestrade\bin\EntityFramework.xml
+D:\用户目录\下载\Bestrade\Bestrade\bin\EntityFramework.SqlServer.xml
+D:\用户目录\下载\Bestrade\Bestrade\bin\Newtonsoft.Json.xml
+D:\用户目录\下载\Bestrade\Bestrade\bin\System.Net.Http.Formatting.xml
+D:\用户目录\下载\Bestrade\Bestrade\bin\System.Web.Helpers.xml
+D:\用户目录\下载\Bestrade\Bestrade\bin\System.Web.Http.xml
+D:\用户目录\下载\Bestrade\Bestrade\bin\System.Web.Http.WebHost.xml
+D:\用户目录\下载\Bestrade\Bestrade\bin\System.Web.Mvc.xml
+D:\用户目录\下载\Bestrade\Bestrade\bin\System.Web.Razor.xml
+D:\用户目录\下载\Bestrade\Bestrade\bin\System.Web.WebPages.xml
+D:\用户目录\下载\Bestrade\Bestrade\bin\System.Web.WebPages.Deployment.xml
+D:\用户目录\下载\Bestrade\Bestrade\bin\System.Web.WebPages.Razor.xml
+D:\用户目录\下载\Bestrade\Bestrade\obj\Debug\Bestrade.dll
+D:\用户目录\下载\Bestrade\Bestrade\obj\Debug\Bestrade.pdb
+D:\用户目录\下载\Bestrade\Bestrade\obj\Debug\Bestrade.Migrations._1st.resources
+D:\用户目录\下载\Bestrade\Bestrade\obj\Debug\Bestrade.csproj.GenerateResource.Cache
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\Bestrade.dll
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\Bestrade.pdb
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\EntityFramework.dll
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\EntityFramework.SqlServer.dll
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\Microsoft.Web.Infrastructure.dll
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\Newtonsoft.Json.dll
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\System.Net.Http.Formatting.dll
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\System.Web.Helpers.dll
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\System.Web.Http.dll
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\System.Web.Http.WebHost.dll
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\System.Web.Mvc.dll
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\System.Web.Razor.dll
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\System.Web.WebPages.Deployment.dll
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\System.Web.WebPages.dll
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\System.Web.WebPages.Razor.dll
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\EntityFramework.xml
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\EntityFramework.SqlServer.xml
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\Newtonsoft.Json.xml
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\System.Net.Http.Formatting.xml
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\System.Web.Helpers.xml
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\System.Web.Http.xml
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\System.Web.Http.WebHost.xml
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\System.Web.Mvc.xml
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\System.Web.Razor.xml
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\System.Web.WebPages.xml
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\System.Web.WebPages.Deployment.xml
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\bin\System.Web.WebPages.Razor.xml
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\obj\Debug\Bestrade.Migrations._1st.resources
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\obj\Debug\Bestrade.csproj.GenerateResource.Cache
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\obj\Debug\Bestrade.dll
+D:\用户目录\下载\Bestrade 1st delete\Bestrade\Bestrade\obj\Debug\Bestrade.pdb
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\Bestrade.dll.config
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\Bestrade.dll
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\Bestrade.pdb
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\EntityFramework.dll
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\EntityFramework.SqlServer.dll
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\Microsoft.Web.Infrastructure.dll
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\Newtonsoft.Json.dll
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\System.Net.Http.Formatting.dll
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\System.Web.Helpers.dll
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\System.Web.Http.dll
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\System.Web.Http.WebHost.dll
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\System.Web.Mvc.dll
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\System.Web.Razor.dll
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\System.Web.WebPages.Deployment.dll
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\System.Web.WebPages.dll
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\System.Web.WebPages.Razor.dll
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\EntityFramework.xml
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\EntityFramework.SqlServer.xml
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\Newtonsoft.Json.xml
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\System.Net.Http.Formatting.xml
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\System.Web.Helpers.xml
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\System.Web.Http.xml
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\System.Web.Http.WebHost.xml
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\System.Web.Mvc.xml
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\System.Web.Razor.xml
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\System.Web.WebPages.xml
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\System.Web.WebPages.Deployment.xml
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\bin\System.Web.WebPages.Razor.xml
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\obj\Debug\Bestrade.Migrations._1st.resources
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\obj\Debug\Bestrade.csproj.GenerateResource.Cache
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\obj\Debug\Bestrade.dll
+D:\BaiduNetdiskDownload\Bestrade pack delete left\Bestrade\Bestrade\obj\Debug\Bestrade.pdb
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\Bestrade.dll.config
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\Bestrade.dll
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\Bestrade.pdb
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\EntityFramework.dll
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\EntityFramework.SqlServer.dll
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\Microsoft.Web.Infrastructure.dll
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\Newtonsoft.Json.dll
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\System.Net.Http.Formatting.dll
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\System.Web.Helpers.dll
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\System.Web.Http.dll
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\System.Web.Http.WebHost.dll
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\System.Web.Mvc.dll
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\System.Web.Razor.dll
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\System.Web.WebPages.Deployment.dll
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\System.Web.WebPages.dll
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\System.Web.WebPages.Razor.dll
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\EntityFramework.xml
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\EntityFramework.SqlServer.xml
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\Newtonsoft.Json.xml
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\System.Net.Http.Formatting.xml
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\System.Web.Helpers.xml
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\System.Web.Http.xml
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\System.Web.Http.WebHost.xml
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\System.Web.Mvc.xml
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\System.Web.Razor.xml
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\System.Web.WebPages.xml
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\System.Web.WebPages.Deployment.xml
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\bin\System.Web.WebPages.Razor.xml
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\obj\Debug\Bestrade.Migrations._1st.resources
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\obj\Debug\Bestrade.csproj.GenerateResource.Cache
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\obj\Debug\Bestrade.dll
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\obj\Debug\Bestrade.pdb
+D:\BaiduNetdiskDownload\Bestrade exception handling\Bestrade\Bestrade\obj\Debug\Bestrade.csprojResolveAssemblyReference.cache

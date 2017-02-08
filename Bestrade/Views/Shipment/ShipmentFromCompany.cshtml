@@ -1,0 +1,60 @@
+﻿@model List<Bestrade.Models.Shipment>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <div class="well">
+                <table class="table">
+                    <tr>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>company</th>
+                        <th>cost</th>
+                    </tr>
+                    @foreach (var a in Model)
+                    {
+                        <tr>
+                            <td>@Html.ActionLink(a.shipment_id, "PackFromShipment", "Pack", new { shipment_id = a.shipment_id }, null)</td>
+                            <td>@a.shipping_date.ToShortDateString()</td>
+                            <td>@a.shipping_company</td>
+                            <td>@a.shippment_cost</td>
+                            <td>@Html.ActionLink("Update", "UpdateView", "Shipment", new { shipment_id = a.shipment_id }, null)</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="well">
+                @using (Html.BeginForm("AddShipment", "Shipment", FormMethod.Post))
+                {
+                    <table class="table">
+                        <tr>
+                            <td>ID</td>
+                            <td>@Html.TextBox("id", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>Date</td>
+                            <td>@Html.TextBox("date", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>Company</td>
+                            <td>@Html.TextBox("company", ViewData["company"], new { @readonly = "true", @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>Cost</td>
+                            <td>@Html.TextBox("cost", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="提交" /></td>
+                        </tr>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+</div>

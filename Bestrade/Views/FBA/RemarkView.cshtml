@@ -1,0 +1,35 @@
+﻿<div>
+    @{
+        ViewBag.Title = "FBA Remark";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    @model Bestrade.Models.FBA
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <div class="well">
+                <table class="table">
+                    <tr>
+                        <td>SKU</td>
+                        <td>@Model.sku</td>
+                    </tr>
+                    <tr>
+                        <td>Condition</td>
+                        <td>@Model.condition</td>
+                    </tr>
+                    <tr>
+                        <td>Mod Num</td>
+                        <td>@Model.mod_num</td>
+                    </tr>
+                </table>
+                <div>
+                    Remark
+                        <br />
+                    <pre style="white-space: normal">
+                            @Model.remark
+                         </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

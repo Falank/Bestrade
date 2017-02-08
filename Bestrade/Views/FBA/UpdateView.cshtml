@@ -1,0 +1,39 @@
+﻿@model Bestrade.Models.FBA
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Update FBA";
+}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+        <div class="well">
+            @using (Html.BeginForm("UpdateFBA", "FBA", FormMethod.Post))
+            {
+                <table class="table">
+                    <tr>
+                        <td>SKU</td>
+                        <td>@Html.TextBox("sku", Model.sku, new { @readonly = "true", @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>Condition</td>
+                        <td>@Html.TextBox("condition", Model.condition, new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>Mod Num</td>
+                        <td>@Html.TextBox("mod_num", Model.mod_num, new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>Remark</td>
+                        <td>@Html.TextArea("Remark", Model.remark, new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="提交" />
+                        </td>
+                    </tr>
+                </table>
+            }
+        </div>
+    </div>
+</div>
+

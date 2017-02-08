@@ -1,0 +1,60 @@
+﻿@model List<Bestrade.Models.Purchase>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Purchase Overview";
+}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+        <div class="well">
+            <table class="table">
+                <tr>
+                    <th>Purchase ID</th>
+                    <th>Purchase Date</th>
+                    <th>Supplier</th>
+                </tr>
+                @foreach (var a in Model)
+                {
+                    <tr>
+                        <td>@Html.ActionLink(a.purchase_id, "PackFromPurchase", "Pack", new { purchase_id = a.purchase_id }, null)</td>
+                        <td>@a.purchase_date.ToString("d")</td>
+                        <td>@a.supplier_name</td>
+                        <td>@Html.ActionLink("Update", "UpdateView", "Purchase", new { purchase_id = a.purchase_id }, null)</td>
+                        <td>
+                            @using (Html.BeginForm("DeletePurchase", "Purchase", FormMethod.Post, new { @id = a.purchase_id }))
+                            {
+                                @Html.Hidden("purchase_id", a.purchase_id, null)
+                                <a style="cursor: pointer" onclick="del('@a.purchase_id')">Delete</a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="well">
+            @Html.Partial("~/Views/Purchase/Suppliers.cshtml", ViewData["suppliers"])
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="well">
+            @using (Html.BeginForm("AddSupplier", "Purchase", FormMethod.Post))
+            {
+                <table class="table">
+                    <tr>
+                        <th>New Supplier</th>
+                    </tr>
+                    <tr>
+                        <td>@Html.TextBox("supplier_name", "", new { @style = "width:100px", @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="提交" /></td>
+                    </tr>
+                </table>
+            }
+        </div>
+    </div>
+</div>
+

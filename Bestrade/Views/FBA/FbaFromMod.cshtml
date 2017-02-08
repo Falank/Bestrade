@@ -1,0 +1,69 @@
+﻿<div>
+    @{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        ViewBag.Title = "FBA";
+    }
+    @model List<Bestrade.Models.FBA>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <div class="well">
+                <table class="table">
+                    <tr>
+                        <th>SKU</th>
+                        <th>Condition</th>
+                        <th>Mod Number</th>
+                        <th>Remark</th>
+                    </tr>
+                    @foreach (var a in Model)
+                    {
+                        <tr>
+                            <td>@a.sku</td>
+                            <td>@a.condition</td>
+                            <td>@a.mod_num</td>
+                            @if (a.remark.Length != 0)
+                            {
+                                <td>@Html.ActionLink("Click to View", "RemarkView", "FBA", new { sku = a.sku }, null)</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            @*<td>@Html.ActionLink("Update", "UpdateView", "FBA", new { sku = a.sku }, null)</td>*@
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="well">
+                @using (Html.BeginForm("AddFBA", "FBA", FormMethod.Post))
+                {
+                    <table class="table">
+                        <tr>
+                            <td>SKU</td>
+                            <td>@Html.TextBox("sku", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>Condition</td>
+                            <td>@Html.TextBox("condition", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>Mod Num</td>
+                            <td>@Html.TextBox("mod_num", ViewData["mod_num"], new { @readonly = "true", @class="form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>Remark</td>
+                            <td>@Html.TextBox("Remark", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="提交" />
+                            </td>
+                        </tr>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+</div>

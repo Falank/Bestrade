@@ -1,0 +1,45 @@
+﻿<div>
+    @{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        ViewBag.Title = "FBA";
+    }
+    @model List<Bestrade.Models.FBA>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <div class="well">
+                <table class="table">
+                    <tr>
+                        <th>SKU</th>
+                        <th>Condition</th>
+                        <th>Mod Number</th>
+                        <th>Remark</th>
+                    </tr>
+                    @foreach (var a in Model)
+                    {
+                        <tr>
+                            <td>@a.sku</td>
+                            <td>@a.condition</td>
+                            <td>@a.mod_num</td>
+                            @if (a.remark.Length != 0)
+                            {
+                                <td>@Html.ActionLink("Click to View", "RemarkView", "FBA", new { sku = a.sku }, null)</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            <td>@Html.ActionLink("Update", "UpdateView", "FBA", new { sku = a.sku }, null)</td>
+                            <td>
+                                <form action="FBA/DeleteFBA" method="post" id="@a.sku">
+                                    <input type="hidden" name="sku" value="@a.sku"/>
+                                    <a style="cursor: pointer" onclick="del('@a.sku')">Delete</a>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

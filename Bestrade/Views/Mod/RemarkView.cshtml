@@ -1,0 +1,37 @@
+﻿<div>
+    @{
+        ViewBag.Title = "Mod Remark";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    @model Bestrade.Models.Mod
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <div class="well">
+                <table class="table">
+                    <tr>
+                        <td>Mod Number</td>
+                        <td>@Model.mod_num</td>
+                    </tr>
+                    <tr>
+                        <td>ASIN</td>
+                        <td>@Model.asin</td>
+                    </tr>
+                    <tr>
+                        <td>Title</td>
+                        <td>@Model.title</td>
+                    </tr>
+                </table>
+                <div>
+                    Remark
+                        <br />
+                    <pre style="white-space: normal">
+                            @Model.remark
+                         </pre>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿@model Bestrade.Models.Pack
+
+@{
+    ViewBag.Title = "Update Pack";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+        <div class="well">
+            @using (Html.BeginForm("UpdatePack", "Pack", FormMethod.Post))
+            {
+                <table class="table">
+                    <tr>
+                        <td>Purchase ID</td>
+                        <td>@Html.TextBox("purchase_id", Model.purchase_id, new { @readonly = true, @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>SKU</td>
+                        <td>@Html.TextBox("sku", Model.sku, new { @readonly = true, @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>Unit Cost</td>
+                        <td>@Html.TextBox("unit_cost", Model.unit_cost, new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>QTY</td>
+                        <td>@Html.TextBox("qty", Model.qty, new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>Remark</td>
+                        <td>@Html.TextArea("remark", Model.pack_remark, new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="提交" /></td>
+                    </tr>
+                </table>
+            }
+        </div>
+    </div>
+</div>

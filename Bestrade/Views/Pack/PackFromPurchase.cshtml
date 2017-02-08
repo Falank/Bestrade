@@ -1,0 +1,75 @@
+﻿@model List<Bestrade.Models.Pack>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Add Pack to Purchase";
+}
+<div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-5">
+            <div class="well">
+                <table class="table">
+                    <tr>
+                        <th>Purchase Id</th>
+                        <th>SKU</th>
+                        <th>unit cost</th>
+                        <th>qty</th>
+                        <th>Remark</th>
+                    </tr>
+                    @foreach (var a in Model)
+                    {
+                        <tr>
+                            <td>@a.purchase_id</td>
+                            <td>@a.sku</td>
+                            <td>@a.unit_cost</td>
+                            <td>@a.qty</td>
+                            @if (a.pack_remark.Length != 0)
+                            {
+                                <td>@Html.ActionLink("Click to View", "RemarkView", "Pack", new { purchase_id = a.purchase_id, sku = a.sku }, null)</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            <td>@Html.ActionLink("Update", "UpdateView", "Pack", new { purchase_id = @a.purchase_id, sku = a.sku }, null)</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="well">
+                @using (Html.BeginForm("AddPack", "Pack", FormMethod.Post))
+                {
+                    <table class="table">
+                        <tr>
+                            <td>Purchase ID</td>
+                            <td>@Html.TextBox("purchase_id", ViewData["purchase_id"], new { @readonly = "true", @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>SKU</td>
+                            <td>@Html.TextBox("sku", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>Unit Cost</td>
+                            <td>@Html.TextBox("unit_cost", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>QTY</td>
+                            <td>@Html.TextBox("qty", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>Remark</td>
+                            <td>@Html.TextArea("remark", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="提交" /></td>
+                        </tr>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+﻿<div>
+    @model List<Bestrade.Models.Company>
+    @{
+        ViewBag.Title = "Company";
+    }
+    <table class="table">
+        <tr>
+            <th>Companies</th>
+        </tr>
+        <tr>
+            <td>
+                <ul class="list-unstyled">
+                    @foreach (var a in Model)
+                    {
+                        <li>@Html.ActionLink(a.shipping_company, "ShipmentFromCompany", new { shipping_company = a.shipping_company })</li>
+                    }
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>

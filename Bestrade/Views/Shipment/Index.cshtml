@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+        
+}
+@model List<Bestrade.Models.Shipment>
+@{
+    ViewBag.Title = "Shipments";
+}
+<div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <div class="well">
+                <table class="table">
+                    <tr>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>company</th>
+                        <th>cost</th>
+                    </tr>
+                    @foreach (var a in Model)
+                    {
+                        <tr>
+                            <td>@Html.ActionLink(a.shipment_id, "PackFromShipment", "Pack", new { shipment_id = a.shipment_id }, null)</td>
+                            <td>@a.shipping_date.ToShortDateString()</td>
+                            <td>@a.shipping_company</td>
+                            <td>@a.shippment_cost</td>
+                            <td>@Html.ActionLink("Update", "UpdateView", "Shipment", new { shipment_id = a.shipment_id }, null)</td>
+                            <td>
+                                <form action="Shipment/DeleteShipment" method="post" id="@a.shipment_id">
+                                    <input type="hidden" name="shipment_id" value="@a.shipment_id"/>
+                                    <a style="cursor: pointer" onclick="del('@a.shipment_id')">Delete</a>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="well">
+                @Html.Partial("~/Views/Shipment/Companies.cshtml", ViewData["companies"])
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="well">
+                @using (Html.BeginForm("AddCompany", "Shipment", FormMethod.Post))
+                {
+                    <table class="table">
+                        <tr>
+                            <th>New Company</th>
+                        </tr>
+                        <tr>
+                            <td>@Html.TextBox("shipping_company", "", new { @style = "width:100px", @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="提交" /></td>
+                        </tr>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+</div>

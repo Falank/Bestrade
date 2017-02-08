@@ -1,0 +1,77 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Mods";
+}
+@model List<Bestrade.Models.Mod>
+<div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-5">
+            <div class="well">
+                <table class="table">
+                    <tr>
+                        <th>Mod Number</th>
+                        <th>ASIN</th>
+                        <th>Title</th>
+                        <th>Remark</th>
+                    </tr>
+                    @foreach (var a in Model)
+                    {
+                        <tr>
+                            <td>@Html.ActionLink(a.mod_num, "FbaFromMod", "FBA", new { mod_num = a.mod_num }, null)</td>
+                            <td>@a.asin</td>
+                            <td>@a.title</td>
+                            @if (a.remark.Length != 0)
+                            {
+                                <td>@Html.ActionLink("Click to View", "RemarkView", "Mod", new { mod_num = a.mod_num }, null)</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            <td>@Html.ActionLink("Update", "UpdateView", "Mod", new { mod_num = a.mod_num }, null)</td>
+                            <td>
+                                <form action="Mod/DeleteMod" method="post" id="@a.mod_num">
+                                    <input type="hidden" name="mod_num" value="@a.mod_num"/>
+                                    <a style="cursor: pointer" onclick="del('@a.mod_num')">Delete</a>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="well">
+                @using (Html.BeginForm("AddMod", "Mod", FormMethod.Post))
+                {
+                    <table class="table">
+                        <tr>
+                            <td>Mod Number</td>
+                            <td>@Html.TextBox("num", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>ASIN</td>
+                            <td>@Html.TextBox("asin", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>Title</td>
+                            <td>@Html.TextBox("title", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>Remark</td>
+                            <td>@Html.TextBox("remark", "", new { @class = "form-control" })</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="提交" class="btn btn-primary" />
+                            </td>
+                        </tr>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+
+
+</div>

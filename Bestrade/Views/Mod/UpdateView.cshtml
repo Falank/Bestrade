@@ -1,0 +1,39 @@
+﻿@model Bestrade.Models.Mod
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Update Mod";
+}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+        <div class="well">
+            @using (Html.BeginForm("UpdateMod", "Mod", FormMethod.Post))
+            {
+                <table class="table">
+                    <tr>
+                        <td>Mod Number</td>
+                        <td>@Html.TextBox("mod_num", Model.mod_num, new { @readonly = "true", @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>ASIN</td>
+                        <td>@Html.TextBox("asin", Model.asin, new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>Title</td>
+                        <td>@Html.TextBox("title", Model.title, new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>Remark</td>
+                        <td>@Html.TextBox("remark", Model.remark, new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="提交" />
+                        </td>
+                    </tr>
+                </table>
+            }
+        </div>
+    </div>
+</div>
