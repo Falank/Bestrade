@@ -9,7 +9,7 @@
 <div>
     <div class="row">
         <div class="col-md-2"></div>
-        <div class="col-md-3">
+        <div class="col-md-5">
             <div class="well">
                 <table class="table">
                     <tr>
@@ -17,6 +17,8 @@
                         <th>Date</th>
                         <th>company</th>
                         <th>cost</th>
+                        <th>Complete</th>
+                        <th>Remark</th>
                     </tr>
                     @foreach (var a in Model)
                     {
@@ -24,7 +26,23 @@
                             <td>@Html.ActionLink(a.shipment_id, "PackFromShipment", "Pack", new { shipment_id = a.shipment_id }, null)</td>
                             <td>@a.shipping_date.ToShortDateString()</td>
                             <td>@a.shipping_company</td>
-                            <td>@a.shippment_cost</td>
+                            <td>@a.shipment_cost</td>
+                            @if (a.complete == true)
+                            {
+                                <td>Yes</td>
+                            }
+                            else
+                            {
+                                <td>No</td>
+                            }
+                            @if (a.shipment_remark.Length != 0)
+                            {
+                                <td>@Html.ActionLink("Click to View", "RemarkView", "Shipment", new { shipment_id = a.shipment_id }, null)</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
                             <td>@Html.ActionLink("Update", "UpdateView", "Shipment", new { shipment_id = a.shipment_id }, null)</td>
                             <td>
                                 <form action="Shipment/DeleteShipment" method="post" id="@a.shipment_id">

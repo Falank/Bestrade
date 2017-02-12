@@ -3,7 +3,7 @@
 }
 @model List<Bestrade.Models.Shipment>
 <div>
-    <table class="table">
+    <table id="shipment" class="table">
         <tr>
             <th>ID</th>
             <th>Date</th>
@@ -16,9 +16,8 @@
                 <td>@Html.ActionLink(a.shipment_id, "PackFromShipment", "Pack", new { shipment_id = a.shipment_id }, null)</td>
                 <td>@a.shipping_date.ToShortDateString()</td>
                 <td>@a.shipping_company</td>
-                <td>@a.shippment_cost</td>
-                <td><a>Select</a></td>
-                <td><a>Complete</a></td>
+                <td>@a.shipment_cost</td>
+                <td><a style="cursor: pointer">Select</a></td>
                 @*<td>@Html.ActionLink("Update", "UpdateView", "Shipment", new { shipment_id = a.shipment_id }, null)</td>
                 <td>
                     <form action="Shipment/DeleteShipment" method="post" id="@a.shipment_id">
@@ -26,6 +25,13 @@
                         <a style="cursor: pointer" onclick="del('@a.shipment_id')">Delete</a>
                     </form>
                 </td>*@
+                <td>
+                    <form action="Pack/CompleteShipment" method="post" id="@a.shipment_id">
+                        <input type="hidden" name="shipment_id" value="@a.shipment_id" />
+                        @*<a style="cursor: pointer" onclick="del('@a.shipment_id')">Delete</a>*@
+                        <input type="submit" value="complete" />
+                    </form>
+                </td>
             </tr>
         }
     </table>

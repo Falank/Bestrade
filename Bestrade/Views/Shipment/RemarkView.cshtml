@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "RemarkView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Bestrade.Models.Shipment
+<div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            <div class="well">
+                <table class="table" style="width: 300px">
+                    <tr>
+                        <td>ID</td>
+                        <td>@Model.shipment_id</td>
+                    </tr>
+                    <tr>
+                        <td>Date</td>
+                        <td>@Model.shipping_date.ToShortDateString()</td>
+                    </tr>
+                    <tr>
+                        <td>Company</td>
+                        <td>@Model.shipping_company</td>
+                    </tr>
+                    <tr>
+                        <td>Cost</td>
+                        <td>@Model.shipment_cost</td>
+                    </tr>
+                </table>
+                <div>
+                    Pack Remark
+                    <br />
+                    <pre style="white-space: normal">
+                            @Model.shipment_remark
+                         </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

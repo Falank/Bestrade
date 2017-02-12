@@ -25,7 +25,31 @@
                     </tr>
                     <tr>
                         <td>Cost</td>
-                        <td>@Html.TextBox("cost", Model.shippment_cost, new { @class = "form-control" })</td>
+                        <td>@Html.TextBox("cost", Model.shipment_cost, new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>Complete</td>
+                        <td>
+                            @if (Model.complete == false)
+                            { 
+                                <select id="complete" name="complete">
+                                    <option value="true">Yes</option>
+                                    <option value="false" selected>No</option>
+                                </select>
+                            }
+                            else
+                            {
+                                <select id="complete" name="complete">
+                                    <option value="true" selected>Yes</option>
+                                    <option value="false">No</option>
+                                </select>
+                            }
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Remark</td>
+                        <td>@Html.TextArea("remark", Model.shipment_remark, new { @class = "form-control" })</td>
                     </tr>
                     <tr>
                         <td>

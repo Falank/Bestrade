@@ -17,9 +17,9 @@ namespace Bestrade.Models
         public double unit_cost { get; set; }
         public int qty { get; set; }
         public string pack_remark { get; set; }
-        public string shipment_id { get; set; }
-        public int shipment_qty { get; set; }
-        public string shipment_remark { get; set; }
+        //public string shipment_id { get; set; }
+        //public int shipment_qty { get; set; }
+        //public string shipment_remark { get; set; }
         public virtual FBA FBA { get; set; }
         public virtual Purchase Purchase { get; set; }
         public static List<Pack> All()
@@ -34,6 +34,5 @@ namespace Bestrade.Models
             Pack pack = btContext.Packs.SingleOrDefault(p => p.sku == sku && p.purchase_id == purchase_id);
             return pack;
         }
-
     }
 }

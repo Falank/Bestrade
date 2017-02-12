@@ -3,7 +3,7 @@ namespace Bestrade.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class _1st : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
@@ -22,7 +22,9 @@ namespace Bestrade.Migrations
                         shipment_id = c.String(nullable: false, maxLength: 128),
                         shipping_date = c.DateTime(nullable: false, storeType: "date"),
                         shipping_company = c.String(maxLength: 128),
-                        shippment_cost = c.Double(nullable: false),
+                        shipment_cost = c.Double(nullable: false),
+                        shipment_remark = c.String(),
+                        complete = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.shipment_id)
                 .ForeignKey("dbo.Company", t => t.shipping_company)
@@ -61,9 +63,6 @@ namespace Bestrade.Migrations
                         unit_cost = c.Double(nullable: false),
                         qty = c.Int(nullable: false),
                         pack_remark = c.String(),
-                        shipment_id = c.String(),
-                        shipment_qty = c.Int(nullable: false),
-                        shipment_remark = c.String(),
                     })
                 .PrimaryKey(t => new { t.purchase_id, t.sku })
                 .ForeignKey("dbo.FBA", t => t.sku, cascadeDelete: true)
@@ -91,20 +90,41 @@ namespace Bestrade.Migrations
                     })
                 .PrimaryKey(t => t.supplier_name);
             
+            CreateTable(
+                "dbo.PackShipment",
+                c => new
+                    {
+                        purchase_id = c.String(maxLength: 128),
+                        sku = c.String(maxLength: 128),
+                        id = c.Int(nullable: false, identity: true),
+                        shipment_id = c.String(maxLength: 128),
+                        qty = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.id)
+                .ForeignKey("dbo.Packs", t => new { t.purchase_id, t.sku })
+                .ForeignKey("dbo.Shipments", t => t.shipment_id)
+                .Index(t => new { t.purchase_id, t.sku })
+                .Index(t => t.shipment_id);
+            
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.PackShipment", "shipment_id", "dbo.Shipments");
+            DropForeignKey("dbo.PackShipment", new[] { "purchase_id", "sku" }, "dbo.Packs");
             DropForeignKey("dbo.Packs", "purchase_id", "dbo.Purchases");
             DropForeignKey("dbo.Purchases", "supplier_name", "dbo.Suppliers");
             DropForeignKey("dbo.Packs", "sku", "dbo.FBA");
             DropForeignKey("dbo.FBA", "mod_num", "dbo.Mods");
             DropForeignKey("dbo.Shipments", "shipping_company", "dbo.Company");
+            DropIndex("dbo.PackShipment", new[] { "shipment_id" });
+            DropIndex("dbo.PackShipment", new[] { "purchase_id", "sku" });
             DropIndex("dbo.Purchases", new[] { "supplier_name" });
             DropIndex("dbo.Packs", new[] { "sku" });
             DropIndex("dbo.Packs", new[] { "purchase_id" });
             DropIndex("dbo.FBA", new[] { "mod_num" });
             DropIndex("dbo.Shipments", new[] { "shipping_company" });
+            DropTable("dbo.PackShipment");
             DropTable("dbo.Suppliers");
             DropTable("dbo.Purchases");
             DropTable("dbo.Packs");

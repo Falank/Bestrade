@@ -15,5 +15,6 @@ namespace Bestrade.Models
         public DbSet<Shipment> Shipments { get; set; }
         public DbSet<Pack> Packs { get; set; }
         public DbSet<Company> Companies { get; set; }
+        public DbSet<PackShipment> PackShipment { get; set; }
     }
 }

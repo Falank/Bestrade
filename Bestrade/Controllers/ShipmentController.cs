@@ -34,7 +34,7 @@ namespace Bestrade.Controllers
             return View(shipments);
         }
         [HttpPost]
-        public ActionResult AddShipment(string id, string date, string company, string cost)
+        public ActionResult AddShipment(string id, string date, string company, string cost, string remark)
         {
             if (id.Length == 0 || date.Length == 0)
             {
@@ -49,7 +49,8 @@ namespace Bestrade.Controllers
                         shipment_id = id,
                         shipping_date = Convert.ToDateTime(date),
                         shipping_company = company,
-                        shippment_cost = Convert.ToDouble(cost)
+                        shipment_cost = Convert.ToDouble(cost),
+                        shipment_remark = remark
                     });
                     btContext.SaveChanges();
                 }
@@ -65,7 +66,7 @@ namespace Bestrade.Controllers
             return RedirectToAction("ShipmentFromCompany", "Shipment", new { @shipping_company = company });
         }
         [HttpPost]
-        public ActionResult UpdateShipment(string id, string date, string company, string cost)
+        public ActionResult UpdateShipment(string id, string date, string company, string cost, string remark, bool complete)
         {
             if(date.Length == 0)
             {
@@ -78,7 +79,9 @@ namespace Bestrade.Controllers
                     var result = btContext.Shipments.SingleOrDefault(s => s.shipment_id == id);
                     result.shipping_date = Convert.ToDateTime(date);
                     result.shipping_company = company;
-                    result.shippment_cost = Convert.ToDouble(cost);
+                    result.shipment_cost = Convert.ToDouble(cost);
+                    result.complete = complete;
+                    result.shipment_remark = remark;
                     btContext.SaveChanges();
                 }
             }
@@ -126,6 +129,10 @@ namespace Bestrade.Controllers
                 btContext.SaveChanges();
             }
             return RedirectToAction("Index");
+        }
+        public ActionResult RemarkView(string shipment_id)
+        {
+            return View(Shipment.Single(shipment_id));
         }
     }
 }

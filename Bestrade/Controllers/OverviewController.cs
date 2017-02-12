@@ -1,22 +1,20 @@
-﻿using System;
+﻿using Bestrade.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Configuration;
-using Bestrade.Models;
 
 namespace Bestrade.Controllers
 {
-    public class HomeController : Controller
+    public class OverviewController : Controller
     {
         //
-        // GET: /Home/
+        // GET: /Overview/
 
         public ActionResult Index()
         {
-
-            return View();
+            return View(Overview.view());
         }
 
     }
