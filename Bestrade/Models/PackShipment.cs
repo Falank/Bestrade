@@ -21,5 +21,17 @@ namespace Bestrade.Models
         public int qty { get; set; }
         public virtual Shipment Shipment { get; set; }
         public virtual Pack Pack { get; set; }
+        public static List<PackShipment> All()
+        {
+            BestradeContext btContext = new BestradeContext();
+            List<PackShipment> packShipment = btContext.PackShipment.ToList();
+            return packShipment;
+        }
+        public static PackShipment Single(int id)
+        {
+            BestradeContext btContext = new BestradeContext();
+            PackShipment packShipment = btContext.PackShipment.SingleOrDefault(p => p.id == id);
+            return packShipment;
+        }
     }
 }

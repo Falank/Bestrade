@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "UpdateView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Bestrade.Models.PackShipment
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+        <div class="well">
+            @using (Html.BeginForm("UpdatePackShipment", "PackShipment", FormMethod.Post))
+            {
+                <table class="table">
+                    <tr>
+                        <td>ID</td>
+                        <td>
+                            @Html.TextBox("id", Model.id, new { @readonly = true, @class = "form-control" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Purchase</td>
+                        <td>@Html.TextBox("purchase_id", Model.purchase_id, new { @readonly = true, @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>SKU</td>
+                        <td>@Html.TextBox("sku", Model.sku, new { @readonly = true, @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>Shipment</td>
+                        <td>@Html.TextBox("shipment_id", Model.shipment_id, new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>QTY</td>
+                        <td>@Html.TextBox("qty", Model.qty, new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="提交" />
+                        </td>
+                    </tr>
+                </table>
+            }
+
+        </div>
+    </div>
+</div>

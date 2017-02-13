@@ -15,7 +15,7 @@ namespace Bestrade.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            return View(PackShipment.All());
         }
         [HttpPost]
         public ActionResult AddPackShipment(string purchase_id, string sku, string shipment_id, string qty)
@@ -33,6 +33,15 @@ namespace Bestrade.Controllers
             }
             return RedirectToAction("Index", "Pack");
         }
-
+        public ActionResult UpdateView(string id)
+        {
+            int ID = Convert.ToInt32(id);
+            return View(PackShipment.Single(ID));
+        }
+        [HttpPost]
+        public ActionResult UpdatePackShipment(string purchase_id, string sku, string shipment_id, string qty)
+        {
+            return RedirectToAction("Index", "PackShipment");
+        }
     }
 }
