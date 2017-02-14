@@ -39,8 +39,19 @@ namespace Bestrade.Controllers
             return View(PackShipment.Single(ID));
         }
         [HttpPost]
-        public ActionResult UpdatePackShipment(string purchase_id, string sku, string shipment_id, string qty)
+        public ActionResult UpdatePackShipment(string id, string purchase_id, string sku, string shipment_id, string qty)
         {
+            int ID = Convert.ToInt32(id);
+            int QTY = Convert.ToInt32(qty);
+            using (var btContext = new BestradeContext())
+            {
+                var result = btContext.PackShipment.SingleOrDefault(p => p.id == ID);
+                result.purchase_id = purchase_id;
+                result.sku = sku;
+                result.shipment_id = shipment_id;
+                result.qty = QTY;
+                btContext.SaveChanges();
+            }
             return RedirectToAction("Index", "PackShipment");
         }
     }
