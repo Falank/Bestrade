@@ -1,4 +1,3 @@
 /Bestrade/Bin/*
 /Bestrade\obj\Debug\*
-!/Bestrade/Bin/Bestrade.dll.config
-!/Bestrade\obj\Debug\Bestrade.csproj.GenerateResource.Cache
+/.vs/*
