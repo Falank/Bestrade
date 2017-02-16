@@ -52,7 +52,14 @@
                         {
                             <td></td>
                         }
-                        <td>@a.complete</td>
+                        @if (a.complete == true)
+                        {
+                            <td>Yes</td>
+                        }
+                        else
+                        {
+                            <td>No</td>
+                        }
                     </tr>
                 }
             </table>

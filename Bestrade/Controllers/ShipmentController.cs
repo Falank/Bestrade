@@ -91,7 +91,7 @@ namespace Bestrade.Controllers
             }
             catch (FormatException e)
             {
-                return RedirectToAction("Error", "Shared", new { message = "日期格式不对" });
+                return RedirectToAction("Error", "Shared", new { message = "请检查日期或数量是否为正确格式" });
             }
             return RedirectToAction("Index", "Shipment");
         }

@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<Bestrade.Models.PackShipment>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-5">
+        <div class="well">
+            <table class="table">
+                <tr>
+                    <th>ID</th>
+                    <th>Purchase</th>
+                    <th>SKU</th>
+                    <th>Shipment</th>
+                    <th>QTY</th>
+                </tr>
+                @foreach (var a in Model)
+                {
+                    <tr>
+                        <td>@a.id</td>
+                        <td>@a.purchase_id</td>
+                        <td>@a.sku</td>
+                        <td>@a.shipment_id</td>
+                        <td>@a.qty</td>
+                        <td>@Html.ActionLink("Update", "UpdateView", "PackShipment", new { id = a.id }, null)</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>

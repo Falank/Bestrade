@@ -141,6 +141,7 @@
     <Compile Include="Models\Mod.cs" />
     <Compile Include="Models\Overview.cs" />
     <Compile Include="Models\Pack.cs" />
+    <Compile Include="Models\PackPurchaseView.cs" />
     <Compile Include="Models\PackShipmentView.cs" />
     <Compile Include="Models\PackShipment.cs" />
     <Compile Include="Models\Purchase.cs" />
@@ -200,7 +201,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Pack\Shipments.cshtml" />
+    <Content Include="Views\PackShipment\Shipments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shipment\RemarkView.cshtml" />
@@ -218,6 +219,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\PackShipment\UpdateView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PackShipment\Overview.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

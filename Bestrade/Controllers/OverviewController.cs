@@ -14,7 +14,7 @@ namespace Bestrade.Controllers
 
         public ActionResult Index()
         {
-            return View(Overview.view());
+            return View(Overview.All());
         }
 
     }

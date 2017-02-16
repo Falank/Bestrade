@@ -33,5 +33,11 @@ namespace Bestrade.Models
             PackShipment packShipment = btContext.PackShipment.SingleOrDefault(p => p.id == id);
             return packShipment;
         }
+        public static List<PackShipment> Single(string purchase_id, string sku, string shipment_id)
+        {
+            BestradeContext btContext = new BestradeContext();
+            List<PackShipment> packShipment = btContext.PackShipment.Where(p => p.purchase_id == purchase_id && p.sku == sku && p.shipment_id == shipment_id).ToList();
+            return packShipment;
+        }
     }
 }

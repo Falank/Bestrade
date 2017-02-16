@@ -1,33 +1,32 @@
 ﻿@*pack index*@
-@*@model List<Bestrade.Models.Pack>*@
-@model List<Bestrade.Models.PackShipmentView>
+@model List<Bestrade.Models.PackPurchaseView>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Packs";
 }
 <div class="row" id="all">
     <div class="col-md-1"></div>
-    <div class="col-md-4">
+    <div class="col-md-6">
         <div class="well">
-            <h4>Purchase</h4>
             <table id="purchase" class="table">
                 <tr>
-                    <th>Id</th>
+                    <th>Purchase</th>
+                    <th>Date</th>
+                    <th>Supplier</th>
                     <th>SKU</th>
-                    <th>PQ</th>
-                    <th>SQ</th>
+                    <th>Cost</th>
+                    <th>QTY</th>
                     <th>Remark</th>
-                    @*<th>S ID</th>
-                    <th>S QTY</th>
-                    <th>S Remark</th>*@
                 </tr>
                 @foreach (var a in Model)
                 {
                     <tr>
-                        <td id="@a.purchase_id">@a.purchase_id</td>
+                        <td>@a.purchase_id</td>
+                        <td>@a.purchase_date.ToShortDateString()</td>
+                        <td>@a.supplier_name</td>
                         <td>@a.sku</td>
-                        <td>@a.p_qty</td>
-                        <td>@a.s_qty</td>
+                        <td>@a.unit_cost</td>
+                        <td>@a.qty</td>
                         @if (a.pack_remark.Length != 0)
                         {
                             <td>@Html.ActionLink("Click to View", "RemarkView", "Pack", new { purchase_id = a.purchase_id, sku = a.sku }, null)</td>
@@ -36,78 +35,17 @@
                         {
                             <td></td>
                         }
-                        <td><a style="cursor: pointer">Select</a></td>
-                        @*<td>@a.shipment_id</td>
-                        <td>@a.shipment_qty</td>
-                        @if (a.shipment_remark != null && a.shipment_remark.Length != 0)
+                        @if (a.sku.Length != 0)
                         {
-                            <td>@Html.ActionLink("Click to View", "Shipment_Remark", "Remark", new { purchase_id = a.purchase_id, sku = a.sku, shipment_id = a.shipment_id }, null)</td>
+                            <td>@Html.ActionLink("Update", "UpdateView", "Pack", new { purchase_id = a.purchase_id, sku = a.sku, return_view = "Index" }, null)</td>
                         }
                         else
                         {
                             <td></td>
-                        }*@
+                        }
                     </tr>
                 }
             </table>
         </div>
     </div>
-    @*<script>
-        document.write($('#1').text());
-    </script>*@
-    <div class="col-md-3">
-        <div class="well">
-            @Html.Partial("~/Views/Pack/Shipments.cshtml", ViewData["shipments"])
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="well">
-            <form action="PackShipment/AddPackShipment" method="post">
-                <table class="table">
-                    <tr>
-                        <td>Purchase ID</td>
-                        <td>
-                            <input name="purchase_id" type="text" class="form-control" style="width: 180px" readonly="readonly" /></td>
-                    </tr>
-                    <tr>
-                        <td>SKU</td>
-                        <td>
-                            <input name="sku" type="text" class="form-control" style="width: 180px" readonly="readonly" /></td>
-                    </tr>
-                    <tr>
-                        <td>Shipment ID</td>
-                        <td>
-                            <input name="shipment_id" type="text" class="form-control" style="width: 180px" readonly="readonly" /></td>
-                    </tr>
-                    <tr>
-                        <td>Shipment Qty</td>
-                        <td>
-                            <input name="qty" type="text" class="form-control" style="width: 50px" /></td>
-                    </tr>
-                    <tr>
-                        <td><input type="submit" /></td>
-                    </tr>
-                </table>
-            </form>
-        </div>
-    </div>
 </div>
-<script>
-    $('#purchase').find('a').click(function () {
-        var purchase_id = $(this).parent('td').prev().prev().prev().prev().prev().text();
-        var sku = $(this).parent('td').prev().prev().prev().prev().text();
-        $('input[name=purchase_id]').prop('readonly', false);
-        $('input[name=sku]').prop('readonly', false);
-        $('input[name=purchase_id]').val(purchase_id);
-        $('input[name=sku]').val(sku);
-        $('input[name=purchase_id]').prop('readonly', true);
-        $('input[name=sku]').prop('readonly', true);
-    });
-    $('#shipment').find('a').click(function () {
-        var shipment_id = $(this).parent('td').prev().prev().prev().prev().text();
-        $('input[name=shipment_id]').prop('readonly', false);
-        $('input[name=shipment_id]').val(shipment_id);
-        $('input[name=shipment_id]').prop('readonly', true);
-    });
-
-</script>

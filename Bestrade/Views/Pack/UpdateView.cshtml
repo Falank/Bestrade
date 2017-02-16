@@ -10,6 +10,7 @@
         <div class="well">
             @using (Html.BeginForm("UpdatePack", "Pack", FormMethod.Post))
             {
+                @Html.Hidden("return_view", ViewData["return_view"])
                 <table class="table">
                     <tr>
                         <td>Purchase ID</td>

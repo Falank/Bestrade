@@ -20,7 +20,7 @@ namespace Bestrade.Models
         public int sq { get; set; }
         public string shipment_remark { get; set; }
         public bool complete { get; set; }
-        public static List<Overview> view()
+        public static List<Overview> All()
         {
             BestradeContext btContext = new BestradeContext();
             return btContext.Database.SqlQuery<Overview>("SELECT * FROM Overview").ToList();
