@@ -13,15 +13,15 @@
                 @Html.Hidden("return_view", ViewData["return_view"])
                 <table class="table">
                     <tr>
-                        <td>Purchase ID</td>
-                        <td>@Html.TextBox("purchase_id", Model.purchase_id, new { @readonly = true, @class = "form-control" })</td>
+                        <td>Purchase</td>
+                        <td>@Html.TextBox("purchase", Model.purchase, new { @readonly = true, @class = "form-control" })</td>
                     </tr>
                     <tr>
                         <td>SKU</td>
                         <td>@Html.TextBox("sku", Model.sku, new { @readonly = true, @class = "form-control" })</td>
                     </tr>
                     <tr>
-                        <td>Unit Cost</td>
+                        <td>Cost</td>
                         <td>@Html.TextBox("unit_cost", Model.unit_cost, new { @class = "form-control" })</td>
                     </tr>
                     <tr>
@@ -30,7 +30,7 @@
                     </tr>
                     <tr>
                         <td>Remark</td>
-                        <td>@Html.TextArea("remark", Model.pack_remark, new { @class = "form-control" })</td>
+                        <td>@Html.TextArea("remark", Model.remark, new { @class = "form-control" })</td>
                     </tr>
                     <tr>
                         <td>

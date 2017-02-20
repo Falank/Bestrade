@@ -12,7 +12,7 @@
                 <ul class="list-unstyled">
                     @foreach (var a in Model)
                     {
-                        <li>@Html.ActionLink(a.shipping_company, "ShipmentFromCompany", new { shipping_company = a.shipping_company })</li>
+                        <li>@Html.ActionLink(a.company, "ShipmentFromCompany", new { company = a.company })</li>
                     }
                 </ul>
             </td>

@@ -11,28 +11,37 @@
             <div class="well">
                 <table class="table">
                     <tr>
-                        <th>Purchase Id</th>
+                        <th>Purchase</th>
                         <th>SKU</th>
-                        <th>unit cost</th>
-                        <th>qty</th>
+                        <th>Cost</th>
+                        <th>QTY</th>
                         <th>Remark</th>
                     </tr>
                     @foreach (var a in Model)
                     {
                         <tr>
-                            <td>@a.purchase_id</td>
+                            <td>@a.purchase</td>
                             <td>@a.sku</td>
                             <td>@a.unit_cost</td>
                             <td>@a.qty</td>
-                            @if (a.pack_remark.Length != 0)
+                            @if (a.remark.Length != 0)
                             {
-                                <td>@Html.ActionLink("Click to View", "RemarkView", "Pack", new { purchase_id = a.purchase_id, sku = a.sku }, null)</td>
+                                <td>@Html.ActionLink("Click to View", "RemarkView", "Pack", new { purchase = a.purchase, sku = a.sku }, null)</td>
                             }
                             else
                             {
                                 <td></td>
                             }
-                            <td>@Html.ActionLink("Update", "UpdateView", "Pack", new { purchase_id = @a.purchase_id, sku = a.sku }, null)</td>
+                            <td>@Html.ActionLink("Update", "UpdateView", "Pack", new { purchase = a.purchase, sku = a.sku, return_view = a.purchase }, null)</td>
+                            <td>
+                                @using (Html.BeginForm("DeletePack", "Pack", FormMethod.Post))
+                                {
+                                    @Html.Hidden("purchase", a.purchase, null)
+                                    @Html.Hidden("sku", a.sku, null)
+                                    @Html.Hidden("return_url");
+                                    <a style="cursor: pointer">Delete</a>
+                                }
+                            </td>
                         </tr>
                     }
                 </table>
@@ -45,7 +54,7 @@
                     <table class="table">
                         <tr>
                             <td>Purchase ID</td>
-                            <td>@Html.TextBox("purchase_id", ViewData["purchase_id"], new { @readonly = "true", @class = "form-control" })</td>
+                            <td>@Html.TextBox("purchase", ViewData["purchase"], new { @readonly = "true", @class = "form-control" })</td>
                         </tr>
                         <tr>
                             <td>SKU</td>

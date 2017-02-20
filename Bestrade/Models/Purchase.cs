@@ -12,24 +12,21 @@ namespace Bestrade.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public string purchase_id { get; set; }
+        public string purchase { get; set; }
         [Column(TypeName = "Date")]
-        public DateTime purchase_date { get; set; }
-
-        public string supplier_name { get; set; }
-        //[ForeignKey("supplier_name")]
+        public DateTime date { get; set; }
+        public string supplier { get; set; }
         public virtual Supplier Supplier { get; set; }
-        //public string supplier_name { get; set; }
         public static List<Purchase> All()
         {
             BestradeContext btContext = new BestradeContext();
             List<Purchase> purchases = btContext.Purchases.ToList();
             return purchases;
         }
-        public static Purchase Single(string purchase_id)
+        public static Purchase Single(string Purchase)
         {
             BestradeContext btContext = new BestradeContext();
-            Purchase purchase = btContext.Purchases.SingleOrDefault(p=>p.purchase_id == purchase_id);
+            Purchase purchase = btContext.Purchases.SingleOrDefault(p => p.purchase == Purchase);
             return purchase;
         }
     }

@@ -15,7 +15,9 @@ namespace Bestrade.Controllers
 
         public ActionResult Index()
         {
-            return View(FBA.All());
+            return View(FbaModView.All());
+            //ViewData["mod"] = Mod.All();
+            //return View(FBA.All());
         }
         public ActionResult FbaFromMod(string mod_num)
         {

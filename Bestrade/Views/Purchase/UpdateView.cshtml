@@ -10,18 +10,19 @@
         <div class="well">
             @using (Html.BeginForm("UpdatePurchase", "Purchase", FormMethod.Post))
             {
+                @Html.Hidden("return_view", ViewData["return_view"])
                 <table class="table">
                     <tr>
-                        <td>Purchase ID</td>
-                        <td>@Html.TextBox("purchase_id", Model.purchase_id, new { @readonly = true, @class = "form-control" })</td>
+                        <td>Purchase</td>
+                        <td>@Html.TextBox("purchase", Model.purchase, new { @readonly = true, @class = "form-control" })</td>
                     </tr>
                     <tr>
                         <td>Date</td>
-                        <td>@Html.TextBox("purchase_date", Model.purchase_date.ToShortDateString(), new { @class = "form-control" })</td>
+                        <td>@Html.TextBox("date", Model.date.ToShortDateString(), new { @class = "form-control" })</td>
                     </tr>
                     <tr>
-                        <td>Supplier Name</td>
-                        <td>@Html.TextBox("supplier_name", Model.supplier_name, new { @class = "form-control" })</td>
+                        <td>Supplier</td>
+                        <td>@Html.TextBox("supplier", Model.supplier, new { @class = "form-control" })</td>
                     </tr>
                     <tr>
                         <td>

@@ -5,10 +5,10 @@
     ViewBag.Title = "Packs";
 }
 <div class="row" id="all">
-    <div class="col-md-1"></div>
+    <div class="col-md-2"></div>
     <div class="col-md-6">
         <div class="well">
-            <table id="purchase" class="table">
+            <table class="table">
                 <tr>
                     <th>Purchase</th>
                     <th>Date</th>
@@ -21,15 +21,15 @@
                 @foreach (var a in Model)
                 {
                     <tr>
-                        <td>@a.purchase_id</td>
-                        <td>@a.purchase_date.ToShortDateString()</td>
-                        <td>@a.supplier_name</td>
+                        <td>@a.purchase</td>
+                        <td>@a.date.ToShortDateString()</td>
+                        <td>@a.supplier</td>
                         <td>@a.sku</td>
                         <td>@a.unit_cost</td>
                         <td>@a.qty</td>
-                        @if (a.pack_remark.Length != 0)
+                        @if (a.remark.Length != 0)
                         {
-                            <td>@Html.ActionLink("Click to View", "RemarkView", "Pack", new { purchase_id = a.purchase_id, sku = a.sku }, null)</td>
+                            <td>@Html.ActionLink("Click to View", "RemarkView", "Pack", new { purchase = a.purchase, sku = a.sku }, null)</td>
                         }
                         else
                         {
@@ -37,7 +37,23 @@
                         }
                         @if (a.sku.Length != 0)
                         {
-                            <td>@Html.ActionLink("Update", "UpdateView", "Pack", new { purchase_id = a.purchase_id, sku = a.sku, return_view = "Index" }, null)</td>
+                            <td>@Html.ActionLink("Update", "UpdateView", "Pack", new { purchase = a.purchase, sku = a.sku, return_view = a.purchase }, null)</td>
+                        }
+                        else
+                        {
+                            <td></td>
+                        }
+                        @if (a.sku.Length != 0)
+                        {
+                            <td>
+                                @using (Html.BeginForm("DeletePack", "Pack", FormMethod.Post))
+                                {
+                                    @Html.Hidden("purchase", a.purchase, null)
+                                    @Html.Hidden("sku", a.sku, null)
+                                    @Html.Hidden("return_url")
+                                    <a style="cursor: pointer">Delete</a>
+                                }
+                            </td>
                         }
                         else
                         {

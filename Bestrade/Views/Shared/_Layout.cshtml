@@ -13,16 +13,57 @@
     <link href="~/Content/Style.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
     <script>
-        function del(id) {
-            var remove = confirm("Are you sure you want to delete this record?");
-            if (remove == true) {
-                $('#' + id).submit();
-            }
-            else {
-                return false;
-            }
-        }
+        $(document).ready(function () {
+            var return_url = $(location).attr('href');
+            $("a").click(function () {
+                if ($(this).text() == "Delete") {
+                    var remove = confirm("Are you sure you want to delete this record?");
+                    if (remove == true) {
+                        $(this).prev().val(return_url);
+                        $(this).parent().submit();
+                    }
+                    else {
+                        return false;
+                    }
+                }
+            });
+            //Trigger pack shipment submenu
+            $('.dropdown-submenu a.test').on("click", function (e) {
+                $(this).next('ul').toggle();
+                e.stopPropagation();
+                e.preventDefault();
+            });
+            var return_url = window.location.href;
+            $("a").click(function () {
+                if ($(this).text() == "Update") {
+                    $(this).attr("href", $(this).attr("href") + "&return_url=" + return_url);
+                }
+            });
+        });
     </script>
+    <style>
+        .dropdown-submenu {
+            position: relative;
+        }
+
+            .dropdown-submenu .dropdown-menu {
+                top: 0;
+                left: 100%;
+                margin-top: -1px;
+            }
+
+        .caret-right {
+            border-bottom: 4px solid transparent;
+            border-top: 4px solid transparent;
+            border-left: 8px solid #000000;
+            display: inline-block;
+            height: 0;
+            opacity: 0.3;
+            vertical-align: middle;
+            width: 0;
+            margin-left: 8px;
+        }
+    </style>
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
@@ -39,17 +80,25 @@
                 </li>
                 <!-- end home glyphicon -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Go To
-                            <span class="caret"></span>
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                        Go To
+                        <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="~/purchase">Purchase</a></li>
                         <li><a href="~/shipment">Shipment</a></li>
                         <li><a href="~/pack">Pack</a></li>
-                        <li><a href="~/packshipment">Pack Shipment</a></li>
+                        <li class="dropdown-submenu">
+                            <a class="test" tabindex="-1" href="#">Pack Shipment <span class="caret-right"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a tabindex="-1" href="~/packshipment">Home</a></li>
+                                <li><a tabindex="-1" href="~/packshipment/overview">Overview</a></li>
+                            </ul>
+                        </li>
                         <li><a href="~/Overview">Overview</a></li>
                         <li><a href="~/fba">FBA</a></li>
                         <li><a href="~/mod">Mod</a></li>
+
                     </ul>
                 </li>
                 <!-- end dropdown menu -->

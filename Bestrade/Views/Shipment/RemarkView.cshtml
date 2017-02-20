@@ -10,27 +10,27 @@
             <div class="well">
                 <table class="table" style="width: 300px">
                     <tr>
-                        <td>ID</td>
-                        <td>@Model.shipment_id</td>
+                        <td>Shipment</td>
+                        <td>@Model.shipment</td>
                     </tr>
                     <tr>
                         <td>Date</td>
-                        <td>@Model.shipping_date.ToShortDateString()</td>
+                        <td>@Model.date.ToShortDateString()</td>
                     </tr>
                     <tr>
                         <td>Company</td>
-                        <td>@Model.shipping_company</td>
+                        <td>@Model.company</td>
                     </tr>
                     <tr>
                         <td>Cost</td>
-                        <td>@Model.shipment_cost</td>
+                        <td>@Model.cost</td>
                     </tr>
                 </table>
                 <div>
-                    Pack Remark
+                    Remark
                     <br />
                     <pre style="white-space: normal">
-                            @Model.shipment_remark
+                            @Model.remark
                          </pre>
                 </div>
             </div>

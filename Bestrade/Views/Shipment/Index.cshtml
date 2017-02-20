@@ -13,20 +13,20 @@
             <div class="well">
                 <table class="table">
                     <tr>
-                        <th>ID</th>
+                        <th>Shipment</th>
                         <th>Date</th>
-                        <th>company</th>
-                        <th>cost</th>
+                        <th>Company</th>
+                        <th>Cost</th>
                         <th>Complete</th>
                         <th>Remark</th>
                     </tr>
                     @foreach (var a in Model)
                     {
                         <tr>
-                            <td>@Html.ActionLink(a.shipment_id, "PackFromShipment", "Pack", new { shipment_id = a.shipment_id }, null)</td>
-                            <td>@a.shipping_date.ToShortDateString()</td>
-                            <td>@a.shipping_company</td>
-                            <td>@a.shipment_cost</td>
+                            <td>@Html.ActionLink(a.shipment, "PackFromShipment", "Pack", new { shipment = a.shipment }, null)</td>
+                            <td>@a.date.ToShortDateString()</td>
+                            <td>@a.company</td>
+                            <td>@a.cost</td>
                             @if (a.complete == true)
                             {
                                 <td>Yes</td>
@@ -35,19 +35,19 @@
                             {
                                 <td>No</td>
                             }
-                            @if (a.shipment_remark.Length != 0)
+                            @if (a.remark.Length != 0)
                             {
-                                <td>@Html.ActionLink("Click to View", "RemarkView", "Shipment", new { shipment_id = a.shipment_id }, null)</td>
+                                <td>@Html.ActionLink("Click to View", "RemarkView", "Shipment", new { shipment = a.shipment }, null)</td>
                             }
                             else
                             {
                                 <td></td>
                             }
-                            <td>@Html.ActionLink("Update", "UpdateView", "Shipment", new { shipment_id = a.shipment_id }, null)</td>
+                            <td>@Html.ActionLink("Update", "UpdateView", "Shipment", new { shipment = a.shipment }, null)</td>
                             <td>
-                                <form action="Shipment/DeleteShipment" method="post" id="@a.shipment_id">
-                                    <input type="hidden" name="shipment_id" value="@a.shipment_id"/>
-                                    <a style="cursor: pointer" onclick="del('@a.shipment_id')">Delete</a>
+                                <form action="Shipment/DeleteShipment" method="post">
+                                    <input type="hidden" name="shipment" value="@a.shipment"/>
+                                    <a style="cursor: pointer">Delete</a>
                                 </form>
                             </td>
                         </tr>
@@ -69,7 +69,7 @@
                             <th>New Company</th>
                         </tr>
                         <tr>
-                            <td>@Html.TextBox("shipping_company", "", new { @style = "width:100px", @class = "form-control" })</td>
+                            <td>@Html.TextBox("company", "", new { @style = "width:100px", @class = "form-control" })</td>
                         </tr>
                         <tr>
                             <td>

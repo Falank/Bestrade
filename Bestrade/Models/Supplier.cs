@@ -12,7 +12,7 @@ namespace Bestrade.Models
     public class Supplier
     {
         [Key]
-        public string supplier_name { get; set; }
+        public string supplier { get; set; }
         public virtual ICollection<Purchase> Purchases { get; set; }
     }
 }

@@ -11,9 +11,9 @@
             <div class="well">
                 <table class="table">
                     <tr>
-                        <th>Purchase Id</th>
+                        <th>Purchase</th>
                         <th>SKU</th>
-                        <th>unit cost</th>
+                        <th>Cost</th>
                         <th>P QTY</th>
                         <th>P Remark</th>
                         <th>S ID</th>
@@ -23,23 +23,23 @@
                     @foreach (var a in Model)
                     {
                         <tr>
-                            <td>@a.purchase_id</td>
+                            <td>@a.purchase</td>
                             <td>@a.sku</td>
                             <td>@a.unit_cost</td>
                             <td>@a.qty</td>
-                            @if (a.pack_remark != null && a.pack_remark.Length != 0)
+                            @if (a.remark != null && a.remark.Length != 0)
                             {
-                                <td>@Html.ActionLink("Click to View", "RemarkView", "Pack", new { purchase_id = a.purchase_id, sku = a.sku }, null)</td>
+                                <td>@Html.ActionLink("Click to View", "RemarkView", "Pack", new { purchase = a.purchase, sku = a.sku }, null)</td>
                             }
                             else
                             {
                                 <td></td>
                             }
-                            @*<td>@a.shipment_id</td>
-                            <td>@a.shipment_qty</td>
-                            @if (a.shipment_remark != null && a.shipment_remark.Length != 0)
+                            @*<td>@a.shipment</td>
+                            <td>@a.qty</td>
+                            @if (a.remark != null && a.remark.Length != 0)
                             {
-                                <td>@Html.ActionLink("Click to View", "RemarkView", "Shipment", new { purchase_id = a.purchase_id, sku = a.sku, shipment_id = a.shipment_id }, null)</td>
+                                <td>@Html.ActionLink("Click to View", "RemarkView", "Shipment", new { purchase = a.purchase, sku = a.sku, shipment = a.shipment }, null)</td>
                             }
                             else
                             {
@@ -57,7 +57,7 @@
                     <table class="table">
                         <tr>
                             <td>Purchase ID</td>
-                            <td>@Html.TextBox("purchase_id", "", new { @class = "form-control" })</td>
+                            <td>@Html.TextBox("purchase", "", new { @class = "form-control" })</td>
                         </tr>
                         <tr>
                             <td>SKU</td>
@@ -65,15 +65,15 @@
                         </tr>
                         <tr>
                             <td>Shipment ID</td>
-                            <td>@Html.TextBox("shipment_id", ViewData["shipment_id"], new { @readonly = "true", @class = "form-control" })</td>
+                            <td>@Html.TextBox("shipment", ViewData["shipment"], new { @readonly = "true", @class = "form-control" })</td>
                         </tr>
                         <tr>
                             <td>Shipment QTY</td>
-                            <td>@Html.TextBox("shipment_qty", "", new { @class = "form-control" })</td>
+                            <td>@Html.TextBox("qty", "", new { @class = "form-control" })</td>
                         </tr>
                         <tr>
                             <td>Shipment Reamrk</td>
-                            <td>@Html.TextBox("shipment_remark", "", new { @class = "form-control" })</td>
+                            <td>@Html.TextBox("remark", "", new { @class = "form-control" })</td>
                         </tr>
                         <tr>
                             <td>

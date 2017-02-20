@@ -1,7 +1,7 @@
 ﻿@model List<Bestrade.Models.Purchase>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = ViewData["supplier_name"];
+    ViewBag.Title = ViewData["supplier"];
 }
 <div>
     <div class="row">
@@ -10,14 +10,23 @@
             <div class="well">
                 <table class="table">
                     <tr>
-                        <th>Purchase ID</th>
-                        <th>Purchase Date</th>
+                        <th>Purchase</th>
+                        <th>Date</th>
                     </tr>
                     @foreach (var a in Model)
                     {
                         <tr>
-                            <td>@Html.ActionLink(a.purchase_id, "PackFromPurchase", "Pack", new { purchase_id = a.purchase_id }, null)</td>
-                            <td>@a.purchase_date.ToString("d")</td>
+                            <td>@Html.ActionLink(a.purchase, "PackFromPurchase", "Pack", new { purchase = a.purchase }, null)</td>
+                            <td>@a.date.ToString("d")</td>
+                            <td>@Html.ActionLink("Update", "UpdateView", "Purchase", new { purchase = a.purchase, return_view = a.supplier }, null)</td>
+                            <td>
+                                @using (Html.BeginForm("DeletePurchase", "Purchase", FormMethod.Post))
+                                {
+                                    @Html.Hidden("purchase", a.purchase, null)
+                                    @Html.Hidden("return_url")
+                                    <a style="cursor: pointer" )">Delete</a>
+                                }
+                            </td>
                         </tr>
                     }
                 </table>
@@ -30,15 +39,15 @@
                     <table class="table">
                         <tr>
                             <td>Purchase ID</td>
-                            <td>@Html.TextBox("purchase_id", "", new { @class = "form-control" })</td>
+                            <td>@Html.TextBox("purchase", "", new { @class = "form-control" })</td>
                         </tr>
                         <tr>
                             <td>Date</td>
-                            <td>@Html.TextBox("purchase_date", "", new { @class = "form-control" })</td>
+                            <td>@Html.TextBox("date", "", new { @class = "form-control" })</td>
                         </tr>
                         <tr>
                             <td>Supplier Name</td>
-                            <td>@Html.TextBox("supplier_name", ViewData["supplier_name"], new { @readonly = "true", @class = "form-control" })</td>
+                            <td>@Html.TextBox("supplier", ViewData["supplier"], new { @readonly = "true", @class = "form-control" })</td>
                         </tr>
                         <tr>
                             <td>

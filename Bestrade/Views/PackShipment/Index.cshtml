@@ -3,14 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Packs";
 }
-<div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-4">
-        <a href="~/packshipment/overview"><h2>Pack Shipment Overview</h2></a>
-    </div>
-</div>
-<div class="row" id="all">
-    <div class="col-md-1"></div>
+<div class="row" id="all" style="margin-left:30px">
     <div class="col-md-4">
         <div class="well">
             <table id="purchase" class="table">
@@ -24,13 +17,13 @@
                 @foreach (var a in Model)
                 {
                     <tr>
-                        <td id="@a.purchase_id">@a.purchase_id</td>
+                        <td id="@a.purchase">@a.purchase</td>
                         <td>@a.sku</td>
                         <td>@a.p_qty</td>
                         <td>@a.s_qty</td>
-                        @if (a.pack_remark.Length != 0)
+                        @if (a.remark.Length != 0)
                         {
-                            <td>@Html.ActionLink("Click to View", "RemarkView", "Pack", new { purchase_id = a.purchase_id, sku = a.sku }, null)</td>
+                            <td>@Html.ActionLink("Click to View", "RemarkView", "Pack", new { purchase = a.purchase, sku = a.sku }, null)</td>
                         }
                         else
                         {
@@ -42,7 +35,7 @@
             </table>
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="well">
             @Html.Partial("~/Views/PackShipment/Shipments.cshtml", ViewData["shipments"])
         </div>
@@ -52,9 +45,9 @@
             <form action="PackShipment/AddPackShipment" method="post">
                 <table class="table">
                     <tr>
-                        <td>Purchase ID</td>
+                        <td>Purchase</td>
                         <td>
-                            <input name="purchase_id" type="text" class="form-control" style="width: 180px" readonly="readonly" />
+                            <input name="purchase" type="text" class="form-control" style="width: 180px" readonly="readonly" />
                         </td>
                     </tr>
                     <tr>
@@ -64,13 +57,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Shipment ID</td>
+                        <td>Shipment</td>
                         <td>
-                            <input name="shipment_id" type="text" class="form-control" style="width: 180px" readonly="readonly" />
+                            <input name="shipment" type="text" class="form-control" style="width: 180px" readonly="readonly" />
                         </td>
                     </tr>
                     <tr>
-                        <td>Shipment Qty</td>
+                        <td>Qty</td>
                         <td>
                             <input name="qty" type="text" class="form-control" style="width: 50px" />
                         </td>
@@ -85,19 +78,19 @@
 </div>
 <script>
     $('#purchase').find('a').click(function () {
-        var purchase_id = $(this).parent('td').prev().prev().prev().prev().prev().text();
+        var purchase = $(this).parent('td').prev().prev().prev().prev().prev().text();
         var sku = $(this).parent('td').prev().prev().prev().prev().text();
-        $('input[name=purchase_id]').prop('readonly', false);
+        $('input[name=purchase]').prop('readonly', false);
         $('input[name=sku]').prop('readonly', false);
-        $('input[name=purchase_id]').val(purchase_id);
+        $('input[name=purchase]').val(purchase);
         $('input[name=sku]').val(sku);
-        $('input[name=purchase_id]').prop('readonly', true);
+        $('input[name=purchase]').prop('readonly', true);
         $('input[name=sku]').prop('readonly', true);
     });
     $('#shipment').find('a').click(function () {
-        var shipment_id = $(this).parent('td').prev().prev().prev().prev().text();
-        $('input[name=shipment_id]').prop('readonly', false);
-        $('input[name=shipment_id]').val(shipment_id);
-        $('input[name=shipment_id]').prop('readonly', true);
+        var shipment = $(this).parent('td').prev().prev().prev().prev().text();
+        $('input[name=shipment]').prop('readonly', false);
+        $('input[name=shipment]').val(shipment);
+        $('input[name=shipment]').prop('readonly', true);
     });
 </script>

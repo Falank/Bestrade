@@ -12,12 +12,12 @@ namespace Bestrade.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public string shipment_id { get; set; }
+        public string shipment { get; set; }
         [Column(TypeName="Date")]
-        public DateTime shipping_date { get; set; }
-        public string shipping_company { get; set; }
-        public double shipment_cost { get; set; }
-        public string shipment_remark { get; set; }
+        public DateTime date { get; set; }
+        public string company { get; set; }
+        public double cost { get; set; }
+        public string remark { get; set; }
         public bool complete { get; set; }
         public virtual Company Company { get; set; }
         public static List<Shipment> All()
@@ -26,10 +26,10 @@ namespace Bestrade.Models
             List<Shipment> shipments = btContext.Shipments.ToList();
             return shipments;
         }
-        public static Shipment Single(string shipment_id)
+        public static Shipment Single(string Shipment)
         {
             BestradeContext btContext = new BestradeContext();
-            Shipment shipment = btContext.Shipments.SingleOrDefault(p => p.shipment_id == shipment_id);
+            Shipment shipment = btContext.Shipments.SingleOrDefault(p => p.shipment == Shipment);
             return shipment;
         }
     }

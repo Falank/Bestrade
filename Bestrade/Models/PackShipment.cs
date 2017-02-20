@@ -10,14 +10,12 @@ namespace Bestrade.Models
     [Table("PackShipment")]
     public class PackShipment
     {
-        [Key]
-        public int id { get; set; }
-        [Column(Order = 0), ForeignKey("Pack")]
-        public string purchase_id { get; set; }
-        [Column(Order = 1), ForeignKey("Pack")]
+        [Column(Order = 0), Key, ForeignKey("Pack")]
+        public string purchase { get; set; }
+        [Column(Order = 1), Key, ForeignKey("Pack")]
         public string sku { get; set; }
-        [ForeignKey("Shipment")]
-        public string shipment_id { get; set; }
+        [Column(Order = 2), Key, ForeignKey("Shipment")]
+        public string shipment { get; set; }
         public int qty { get; set; }
         public virtual Shipment Shipment { get; set; }
         public virtual Pack Pack { get; set; }
@@ -27,16 +25,10 @@ namespace Bestrade.Models
             List<PackShipment> packShipment = btContext.PackShipment.ToList();
             return packShipment;
         }
-        public static PackShipment Single(int id)
+        public static PackShipment Single(string purchase, string sku, string shipment)
         {
             BestradeContext btContext = new BestradeContext();
-            PackShipment packShipment = btContext.PackShipment.SingleOrDefault(p => p.id == id);
-            return packShipment;
-        }
-        public static List<PackShipment> Single(string purchase_id, string sku, string shipment_id)
-        {
-            BestradeContext btContext = new BestradeContext();
-            List<PackShipment> packShipment = btContext.PackShipment.Where(p => p.purchase_id == purchase_id && p.sku == sku && p.shipment_id == shipment_id).ToList();
+            PackShipment packShipment = btContext.PackShipment.SingleOrDefault(p => p.purchase == purchase && p.sku == sku && p.shipment == shipment);
             return packShipment;
         }
     }

@@ -13,7 +13,7 @@ namespace Bestrade.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201702120820220_initial"; }
+            get { return "201702180551485_initial"; }
         }
         
         string IMigrationMetadata.Source

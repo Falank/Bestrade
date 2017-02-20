@@ -130,14 +130,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702120820220_initial.cs" />
-    <Compile Include="Migrations\201702120820220_initial.Designer.cs">
-      <DependentUpon>201702120820220_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201702180551485_initial.cs" />
+    <Compile Include="Migrations\201702180551485_initial.Designer.cs">
+      <DependentUpon>201702180551485_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BestradeContext.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\FBA.cs" />
+    <Compile Include="Models\FbaModView.cs" />
     <Compile Include="Models\Mod.cs" />
     <Compile Include="Models\Overview.cs" />
     <Compile Include="Models\Pack.cs" />
@@ -207,11 +208,6 @@
     <Content Include="Views\Shipment\RemarkView.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702120820220_initial.resx">
-      <DependentUpon>201702120820220_initial.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Overview\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -222,6 +218,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\PackShipment\Overview.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702180551485_initial.resx">
+      <DependentUpon>201702180551485_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

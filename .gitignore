@@ -1,3 +1,4 @@
 /Bestrade/Bin/*
 /Bestrade/obj/Debug/*
 /.vs/
+*.suo

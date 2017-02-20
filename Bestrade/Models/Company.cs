@@ -7,11 +7,11 @@ using System.Web;
 
 namespace Bestrade.Models
 {
-    [Table("Company")]
+    [Table("Companies")]
     public class Company
     {
         [Key]
-        public string shipping_company { get; set; }
+        public string company { get; set; }
         public ICollection<Shipment> Shipment { get; set; }
     }
 }

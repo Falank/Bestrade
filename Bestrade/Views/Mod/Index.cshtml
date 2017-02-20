@@ -31,9 +31,9 @@
                             }
                             <td>@Html.ActionLink("Update", "UpdateView", "Mod", new { mod_num = a.mod_num }, null)</td>
                             <td>
-                                <form action="Mod/DeleteMod" method="post" id="@a.mod_num">
+                                <form action="Mod/DeleteMod" method="post">
                                     <input type="hidden" name="mod_num" value="@a.mod_num"/>
-                                    <a style="cursor: pointer" onclick="del('@a.mod_num')">Delete</a>
+                                    <a style="cursor: pointer">Delete</a>
                                 </form>
                             </td>
                         </tr>

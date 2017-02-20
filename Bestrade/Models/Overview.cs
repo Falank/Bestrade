@@ -7,18 +7,18 @@ namespace Bestrade.Models
 {
     public class Overview
     {
-        public string purchase_id { get; set; }
+        public string purchase { get; set; }
         public string sku { get; set; }
-        public DateTime purchase_date { get; set; }
-        public string supplier_name { get; set; }
+        public DateTime p_date { get; set; }
+        public string supplier { get; set; }
         public double unit_cost { get; set; }
-        public int pq { get; set; }
-        public string pack_remark { get; set; }
-        public string shipment_id { get; set; }
-        public DateTime shipping_date { get; set; }
-        public string shipping_company { get; set; }
-        public int sq { get; set; }
-        public string shipment_remark { get; set; }
+        public int p_qty { get; set; }
+        public string p_remark { get; set; }
+        public string shipment { get; set; }
+        public DateTime s_date { get; set; }
+        public string company { get; set; }
+        public int s_qty { get; set; }
+        public string s_remark { get; set; }
         public bool complete { get; set; }
         public static List<Overview> All()
         {

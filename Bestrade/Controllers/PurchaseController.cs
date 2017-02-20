@@ -19,21 +19,22 @@ namespace Bestrade.Controllers
             ViewData["suppliers"] = suppliers;
             return View(Purchase.All());
         }
-        public ActionResult PurchaseFromSupplier(string supplier_name)
+        public ActionResult PurchaseFromSupplier(string supplier)
         {
             BestradeContext btContext = new BestradeContext();
-            List<Purchase> purchases = btContext.Purchases.Where(p=>p.supplier_name == supplier_name).ToList();
-            ViewData["supplier_name"] = btContext.Suppliers.SingleOrDefault(s => s.supplier_name == supplier_name).supplier_name;
+            List<Purchase> purchases = btContext.Purchases.Where(p=>p.supplier == supplier).ToList();
+            ViewData["supplier"] = btContext.Suppliers.SingleOrDefault(s => s.supplier == supplier).supplier;
             return View(purchases);
         }
-        public ActionResult UpdateView(string purchase_id)
+        public ActionResult UpdateView(string purchase, string return_view)
         {
-            return View(Purchase.Single(purchase_id));
+            ViewData["return_view"] = return_view;
+            return View(Purchase.Single(purchase));
         }
         [HttpPost]
-        public ActionResult AddSupplier(string supplier_name)
+        public ActionResult AddSupplier(string supplier)
         {
-            if (supplier_name.Length == 0)
+            if (supplier.Length == 0)
             {
                 return RedirectToAction("Error", "Shared", new { message = "供货商名字不能为空" });
             }
@@ -43,7 +44,7 @@ namespace Bestrade.Controllers
                 {
                     btContext.Suppliers.Add(new Supplier
                     {
-                        supplier_name = supplier_name
+                        supplier = supplier
                     });
                     btContext.SaveChanges();
                 }
@@ -55,9 +56,9 @@ namespace Bestrade.Controllers
             return RedirectToAction("Index", "Purchase");
         }
         [HttpPost]
-        public ActionResult AddPurchase(string purchase_id, string purchase_date, string supplier_name)
+        public ActionResult AddPurchase(string purchase, string date, string supplier)
         {
-            if (purchase_id.Length == 0 || purchase_date.Length == 0)
+            if (purchase.Length == 0 || date.Length == 0)
             {
                 return RedirectToAction("Error", "Shared", new { message = "单号或者日期不能为空" });
             }
@@ -67,9 +68,9 @@ namespace Bestrade.Controllers
                 {
                     btContext.Purchases.Add(new Purchase
                     {
-                        purchase_id = purchase_id,
-                        purchase_date = Convert.ToDateTime(purchase_date),
-                        supplier_name = supplier_name
+                        purchase = purchase,
+                        date = Convert.ToDateTime(date),
+                        supplier = supplier
                     });
                     btContext.SaveChanges();
                 }
@@ -82,12 +83,12 @@ namespace Bestrade.Controllers
             {
                 return RedirectToAction("Error", "Shared", new { message = "日期格式不对" });
             }
-            return RedirectToAction("PurchaseFromSupplier", "Purchase", new { supplier_name = supplier_name });
+            return RedirectToAction("PurchaseFromSupplier", "Purchase", new { supplier = supplier });
         }
         [HttpPost]
-        public ActionResult UpdatePurchase(string purchase_id, string purchase_date, string supplier_name)
+        public ActionResult UpdatePurchase(string purchase, string date, string supplier, string return_view)
         {
-            if (purchase_date.Length == 0)
+            if (date.Length == 0)
             {
                 return RedirectToAction("Error", "Shared", new { message = "日期不能为空" });
             }
@@ -95,9 +96,9 @@ namespace Bestrade.Controllers
             {
                 using (var btContext = new BestradeContext())
                 {
-                    var result = btContext.Purchases.SingleOrDefault(r => r.purchase_id == purchase_id);
-                    result.purchase_date = Convert.ToDateTime(purchase_date);
-                    result.supplier_name = supplier_name;
+                    var result = btContext.Purchases.SingleOrDefault(r => r.purchase == purchase);
+                    result.date = Convert.ToDateTime(date);
+                    result.supplier = supplier;
                     btContext.SaveChanges();
                 }
             }
@@ -109,18 +110,22 @@ namespace Bestrade.Controllers
             {
                 return RedirectToAction("Error", "Shared", new { message = "日期格式不对" });
             }
-            return RedirectToAction("Index");
+            if(return_view.Length == 0)
+            {
+                return RedirectToAction("Index", "Purchase");
+            }
+            return RedirectToAction("PurchaseFromSupplier", "Purchase", new { supplier = supplier });
         }
         [HttpPost]
-        public ActionResult DeletePurchase(string purchase_id)
+        public ActionResult DeletePurchase(string purchase, string return_url)
         {
             using (var btContext = new BestradeContext())
             {
-                var delete = btContext.Purchases.SingleOrDefault(p => p.purchase_id == purchase_id);
+                var delete = btContext.Purchases.SingleOrDefault(p => p.purchase == purchase);
                 btContext.Purchases.Remove(delete);
                 btContext.SaveChanges();
             }
-            return RedirectToAction("Index");
+            return Redirect(return_url);
         }
     }
 }

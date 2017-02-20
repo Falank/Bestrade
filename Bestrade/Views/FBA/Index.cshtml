@@ -1,27 +1,91 @@
-﻿<div>
-    @{
-        Layout = "~/Views/Shared/_Layout.cshtml";
-        ViewBag.Title = "FBA";
-    }
-    @model List<Bestrade.Models.FBA>
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-4">
-            <div class="well">
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "FBA";
+}
+@model List<Bestrade.Models.FbaModView>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+        <div class="well">
+            @using (Html.BeginForm("AddFBA", "FBA", FormMethod.Post))
+            {
                 <table class="table">
                     <tr>
-                        <th>SKU</th>
-                        <th>Condition</th>
-                        <th>Mod Number</th>
-                        <th>Remark</th>
+                        <td>SKU</td>
+                        <td>@Html.TextBox("sku", "", new { @class = "form-control" })</td>
                     </tr>
-                    @foreach (var a in Model)
+                    <tr>
+                        <td>Condition</td>
+                        <td>@Html.TextBox("condition", "", new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>Mod Num</td>
+                        <td>@Html.TextBox("mod_num", "", new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>Remark</td>
+                        <td>@Html.TextBox("Remark", "", new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="提交" />
+                        </td>
+                    </tr>
+                </table>
+            }
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
+        <div class="well">
+            @using (Html.BeginForm("AddMod", "Mod", FormMethod.Post))
+            {
+                <table class="table">
+                    <tr>
+                        <td>Mod Num</td>
+                        <td>@Html.TextBox("num", "", new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>ASIN</td>
+                        <td>@Html.TextBox("asin", "", new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>Title</td>
+                        <td>@Html.TextBox("title", "", new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>Remark</td>
+                        <td>@Html.TextBox("remark", "", new { @class = "form-control" })</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="提交" class="btn btn-primary" />
+                        </td>
+                    </tr>
+                </table>
+            }
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+        <div class="well">
+            <table class="table">
+                <tr>
+                    <th>SKU</th>
+                    <th>Condition</th>
+                    <th>Remark</th>
+                </tr>
+                @foreach (var a in Model)
+                {
+                    if (a.sku.Length != 0)
                     {
                         <tr>
                             <td>@a.sku</td>
                             <td>@a.condition</td>
-                            <td>@a.mod_num</td>
-                            @if (a.remark.Length != 0)
+                            @if (a.f_remark.Length != 0)
                             {
                                 <td>@Html.ActionLink("Click to View", "RemarkView", "FBA", new { sku = a.sku }, null)</td>
                             }
@@ -29,17 +93,64 @@
                             {
                                 <td></td>
                             }
+
                             <td>@Html.ActionLink("Update", "UpdateView", "FBA", new { sku = a.sku }, null)</td>
                             <td>
                                 <form action="FBA/DeleteFBA" method="post" id="@a.sku">
-                                    <input type="hidden" name="sku" value="@a.sku"/>
-                                    <a style="cursor: pointer" onclick="del('@a.sku')">Delete</a>
+                                    <input type="hidden" name="sku" value="@a.sku" />
+                                    <a style="cursor: pointer">Delete</a>
                                 </form>
                             </td>
+
+
                         </tr>
                     }
-                </table>
-            </div>
+                    else
+                    {
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td style="font-weight:bold;color:red">No Data</td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="well">
+            <table class="table">
+                <tr>
+                    <th>Mode Number</th>
+                    <th>ASIN</th>
+                    <th>Title</th>
+                    <th>Remark</th>
+                </tr>
+                @foreach (var a in Model)
+                {
+                    <tr>
+                        <td>@a.mod_num</td>
+                        <td>@a.asin</td>
+                        <td>@a.title</td>
+                        @if (a.m_remark.Length != 0)
+                        {
+                            <td>@Html.ActionLink("Click to View", "RemarkView", "Mod", new { mod_num = a.mod_num }, null)</td>
+                        }
+                        else
+                        {
+                            <td></td>
+                        }
+                        <td>@Html.ActionLink("Update", "UpdateView", "Mod", new { mod_num = a.mod_num }, null)</td>
+                        <td>
+                            <form action="Mod/DeleteMod" method="post">
+                                <input type="hidden" name="mod_num" value="@a.mod_num" />
+                                <a style="cursor: pointer">Delete</a>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </table>
         </div>
     </div>
 </div>

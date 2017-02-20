@@ -25,15 +25,15 @@ namespace Bestrade.Controllers
             return View(PackShipment.All());
         }
         [HttpPost]
-        public ActionResult AddPackShipment(string purchase_id, string sku, string shipment_id, string qty)
+        public ActionResult AddPackShipment(string purchase, string sku, string shipment, string qty)
         {
             if (qty.Length == 0)
             {
                 return RedirectToAction("Error", "Shared", new { message = "数量不能为空" });
             }
-            if (PackShipment.Single(purchase_id,sku,shipment_id).Count > 0)
+            if (purchase.Length == 0 || sku.Length == 0 || shipment.Length == 0)
             {
-                return RedirectToAction("Error", "Shared", new { message = "同样的Pack在同一个Shipment下面已经存在，请做调整" });
+                return RedirectToAction("Error", "Shared", new { message = "请选择Pack和Shipment" });
             }
             try
             {
@@ -41,9 +41,9 @@ namespace Bestrade.Controllers
                 {
                     btContext.PackShipment.Add(new PackShipment
                     {
-                        purchase_id = purchase_id,
+                        purchase = purchase,
                         sku = sku,
-                        shipment_id = shipment_id,
+                        shipment = shipment,
                         qty = Convert.ToInt32(qty)
                     });
                     btContext.SaveChanges();
@@ -51,7 +51,7 @@ namespace Bestrade.Controllers
             }
             catch(DbUpdateException e)
             {
-                return RedirectToAction("Error", "Shared", new { message = "请选择Pack和Shipment" });
+                return RedirectToAction("Error", "Shared", new { message = "同样的Pack在同一个Shipment下面已经存在，请做调整" });
             }
             catch (FormatException e)
             {
@@ -60,23 +60,25 @@ namespace Bestrade.Controllers
 
             return RedirectToAction("Index", "PackShipment");
         }
-        public ActionResult UpdateView(string id)
+        public ActionResult UpdateView(string purchase, string sku, string shipment)
         {
-            int ID = Convert.ToInt32(id);
-            return View(PackShipment.Single(ID));
+            return View(PackShipment.Single(purchase, sku, shipment));
         }
         [HttpPost]
-        public ActionResult UpdatePackShipment(string id, string purchase_id, string sku, string shipment_id, string qty)
+        public ActionResult UpdatePackShipment(string purchase, string sku, string shipment, string qty)
         {
-            int ID = Convert.ToInt32(id);
+            if (qty.Length == 0)
+            {
+                return RedirectToAction("Error", "Shared", new { message = "数量不能为空" });
+            }
             try
             {
                 using (var btContext = new BestradeContext())
                 {
-                    var result = btContext.PackShipment.SingleOrDefault(p => p.id == ID);
-                    result.purchase_id = purchase_id;
+                    var result = btContext.PackShipment.SingleOrDefault(p => p.purchase == purchase && p.sku == sku && p.shipment == shipment);
+                    result.purchase = purchase;
                     result.sku = sku;
-                    result.shipment_id = shipment_id;
+                    result.shipment = shipment;
                     result.qty = Convert.ToInt32(qty);
                     btContext.SaveChanges();
                 }
@@ -90,6 +92,28 @@ namespace Bestrade.Controllers
                 return RedirectToAction("Error", "Shared", new { message = "Pack或Shipment不存在" });
             }
 
+            return RedirectToAction("Overview", "PackShipment");
+        }
+        [HttpPost]
+        public ActionResult CompleteShipment(string shipment)
+        {
+            using (var btContext = new BestradeContext())
+            {
+                var result = btContext.Shipments.SingleOrDefault(s => s.shipment == shipment);
+                result.complete = true;
+                btContext.SaveChanges();
+            }
+            return RedirectToAction("Index", "PackShipment");
+        }
+        [HttpPost]
+        public ActionResult DeletePackShipment(string purchase, string sku, string shipment)
+        {
+            using (var btContext = new BestradeContext())
+            {
+                var delete = btContext.PackShipment.SingleOrDefault(p => p.purchase == purchase && p.sku == sku && p.shipment == shipment);
+                btContext.PackShipment.Remove(delete);
+                btContext.SaveChanges();
+            }
             return RedirectToAction("Overview", "PackShipment");
         }
     }

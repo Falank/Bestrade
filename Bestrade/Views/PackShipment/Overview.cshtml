@@ -9,7 +9,6 @@
         <div class="well">
             <table class="table">
                 <tr>
-                    <th>ID</th>
                     <th>Purchase</th>
                     <th>SKU</th>
                     <th>Shipment</th>
@@ -18,12 +17,20 @@
                 @foreach (var a in Model)
                 {
                     <tr>
-                        <td>@a.id</td>
-                        <td>@a.purchase_id</td>
+                        <td>@a.purchase</td>
                         <td>@a.sku</td>
-                        <td>@a.shipment_id</td>
+                        <td>@a.shipment</td>
                         <td>@a.qty</td>
-                        <td>@Html.ActionLink("Update", "UpdateView", "PackShipment", new { id = a.id }, null)</td>
+                        <td>@Html.ActionLink("Update", "UpdateView", "PackShipment", new { purchase = a.purchase, sku = a.sku, shipment = a.shipment }, null)</td>
+                        <td>
+                            @using (Html.BeginForm("DeletePackShipment", "PackShipment", FormMethod.Post))
+                            {
+                                @Html.Hidden("purchase", a.purchase, null)
+                                @Html.Hidden("sku", a.sku, null)
+                                @Html.Hidden("shipment", a.shipment, null)
+                                <a style="cursor: pointer">Delete</a>
+                            }
+                        </td>
                     </tr>
                 }
             </table>

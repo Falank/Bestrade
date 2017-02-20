@@ -9,28 +9,28 @@
             <div class="well">
                 <table class="table">
                     <tr>
-                        <th>ID</th>
+                        <th>Shipment</th>
                         <th>Date</th>
-                        <th>company</th>
-                        <th>cost</th>
+                        <th>Company</th>
+                        <th>Cost</th>
                         <th>Remark</th>
                     </tr>
                     @foreach (var a in Model)
                     {
                         <tr>
-                            <td>@Html.ActionLink(a.shipment_id, "PackFromShipment", "Pack", new { shipment_id = a.shipment_id }, null)</td>
-                            <td>@a.shipping_date.ToShortDateString()</td>
-                            <td>@a.shipping_company</td>
-                            <td>@a.shipment_cost</td>
-                            @if (a.shipment_remark.Length != 0)
+                            <td>@Html.ActionLink(a.shipment, "PackFromShipment", "Pack", new { shipment = a.shipment }, null)</td>
+                            <td>@a.date.ToShortDateString()</td>
+                            <td>@a.company</td>
+                            <td>@a.cost</td>
+                            @if (a.remark.Length != 0)
                             {
-                                <td>@Html.ActionLink("Click to View", "RemarkView", "Shipment", new { shipment_id = a.shipment_id }, null)</td>
+                                <td>@Html.ActionLink("Click to View", "RemarkView", "Shipment", new { shipment = a.shipment }, null)</td>
                             }
                             else
                             {
                                 <td></td>
                             }
-                            <td>@Html.ActionLink("Update", "UpdateView", "Shipment", new { shipment_id = a.shipment_id }, null)</td>
+                            <td>@Html.ActionLink("Update", "UpdateView", "Shipment", new { shipment = a.shipment }, null)</td>
                         </tr>
                     }
                 </table>
@@ -42,8 +42,8 @@
                 {
                     <table class="table">
                         <tr>
-                            <td>ID</td>
-                            <td>@Html.TextBox("id", "", new { @class = "form-control" })</td>
+                            <td>Shipment</td>
+                            <td>@Html.TextBox("shipment", "", new { @class = "form-control" })</td>
                         </tr>
                         <tr>
                             <td>Date</td>

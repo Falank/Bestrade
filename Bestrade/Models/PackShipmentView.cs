@@ -7,11 +7,11 @@ namespace Bestrade.Models
 {
     public class PackShipmentView
     {
-        public string purchase_id { get; set; }
+        public string purchase { get; set; }
         public string sku { get; set; }
         public int p_qty { get; set; }
         public int s_qty { get; set; }
-        public string pack_remark { get; set; }
+        public string remark { get; set; }
         public static List<PackShipmentView> view()
         {
             BestradeContext btContext = new BestradeContext();

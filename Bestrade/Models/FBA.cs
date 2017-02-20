@@ -10,7 +10,7 @@ namespace Bestrade.Models
     [Table("FBA")]
     public class FBA
     {
-        [Key][Required]
+        [Key]
         public string sku { get; set; }
         public string mod_num { get; set; }
         public string condition { get; set; }

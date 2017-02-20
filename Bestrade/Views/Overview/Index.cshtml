@@ -5,48 +5,61 @@
 @model List<Bestrade.Models.Overview>
 <div class="row">
     <div class="col-md-1"></div>
-    <div class="col-md-10">
+    <div class="col-md-5">
         <div class="well">
             <table class="table">
                 <tr>
-                    <th>P ID</th>
+                    <th>Purchase</th>
                     <th>SKU</th>
-                    <th>P Date</th>
+                    <th>Date</th>
                     <th>Supplier</th>
-                    <th>P Cost</th>
-                    <th>PQ</th>
-                    <th>P Remark</th>
-                    <th>S ID</th>
-                    <th>S Date</th>
-                    <th>Company</th>
-                    <th>SQ</th>
-                    <th>S Remark</th>
-                    <th>Complete</th>
+                    <th>Cost</th>
+                    <th>QTY</th>
+                    <th>Remark</th>
                 </tr>
                 @foreach (var a in Model)
                 {
                     <tr>
-                        <td>@a.purchase_id</td>
+                        <td>@a.purchase</td>
                         <td>@a.sku</td>
-                        <td>@a.purchase_date.ToShortDateString()</td>
-                        <td>@a.supplier_name</td>
+                        <td>@a.p_date.ToShortDateString()</td>
+                        <td>@a.supplier</td>
                         <td>@a.unit_cost</td>
-                        <td>@a.pq</td>
-                        @if (a.pack_remark.Length != 0)
+                        <td>@a.p_qty</td>
+                        @if (a.p_remark.Length != 0)
                         {
-                            <td>@Html.ActionLink("Click to View", "RemarkView", "Pack", new { purchase_id = a.purchase_id, sku = a.sku }, null)</td>
+                            <td>@Html.ActionLink("Click to View", "RemarkView", "Pack", new { purchase = a.purchase, sku = a.sku }, null)</td>
                         }
                         else
                         {
                             <td></td>
                         }
-                        <td>@a.shipment_id</td>
-                        <td>@a.shipping_date.ToShortDateString()</td>
-                        <td>@a.shipping_company</td>
-                        <td>@a.sq</td>
-                        @if (a.shipment_remark.Length != 0)
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="well">
+            <table class="table">
+                <tr>
+                    <th>Shipment</th>
+                    <th>Date</th>
+                    <th>Company</th>
+                    <th>QTY</th>
+                    <th>Remark</th>
+                    <th>Complete</th>
+                </tr>
+                @foreach (var a in Model)
+                {
+                    <tr>
+                        <td>@a.shipment</td>
+                        <td>@a.s_date.ToShortDateString()</td>
+                        <td>@a.company</td>
+                        <td>@a.s_qty</td>
+                        @if (a.s_remark.Length != 0)
                         {
-                            <td>@Html.ActionLink("Click to View", "RemarkView", "Shipment", new { shipment_id = a.shipment_id }, null)</td>
+                            <td>@Html.ActionLink("Click to View", "RemarkView", "Shipment", new { shipment = a.shipment }, null)</td>
                         }
                         else
                         {
