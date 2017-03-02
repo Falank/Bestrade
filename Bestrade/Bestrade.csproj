@@ -174,7 +174,6 @@
     <Content Include="Views\FBA\Index.cshtml" />
     <Content Include="Views\FBA\UpdateView.cshtml" />
     <Content Include="Views\FBA\RemarkView.cshtml" />
-    <Content Include="Views\Purchase\Suppliers.cshtml" />
     <Content Include="Views\Purchase\PurchaseFromSupplier.cshtml" />
     <Content Include="Views\Purchase\Index.cshtml" />
     <Content Include="Views\Purchase\UpdateView.cshtml" />
@@ -191,9 +190,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shipment\Companies.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shipment\ShipmentFromCompany.cshtml" />

@@ -13,10 +13,10 @@ namespace Bestrade.Controllers
         //
         // GET: /Mod/
 
-        public ActionResult Index()
-        {
-            return View(Mod.All());
-        }
+        //public ActionResult Index()
+        //{
+        //    return View(Mod.All());
+        //}
         public ActionResult UpdateView(string mod_num)
         {
             return View(Mod.Single(mod_num));
@@ -60,7 +60,7 @@ namespace Bestrade.Controllers
                 result.remark = remark;
                 btContext.SaveChanges();
             }
-            return RedirectToAction("Index", "Mod");
+            return RedirectToAction("Index", "FBA");
         }
         [HttpPost]
         public ActionResult DeleteMod(string mod_num)
@@ -69,9 +69,17 @@ namespace Bestrade.Controllers
             {
                 var delete = btContext.Mods.SingleOrDefault(m => m.mod_num == mod_num);
                 btContext.Mods.Remove(delete);
-                btContext.SaveChanges();
+                try
+                {
+                    btContext.SaveChanges();
+                }
+                catch(DbUpdateException e)
+                {
+                    return RedirectToAction("Error", "Shared", new { message = "该型号下存在一个或多个SKU，请删除SKU后再删除此型号" });
+                }
+                
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "FBA");
         }
     }
 }

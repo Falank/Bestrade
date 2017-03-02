@@ -57,7 +57,21 @@
         </div>
         <div class="col-md-2">
             <div class="well">
-                @Html.Partial("~/Views/Shipment/Companies.cshtml", ViewData["companies"])
+                <table class="table">
+                    <tr>
+                        <th>Companies</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul class="list-unstyled">
+                                @foreach (var a in (List<Bestrade.Models.Company>)ViewData["companies"])
+                                {
+                                    <li>@Html.ActionLink(a.company, "ShipmentFromCompany", new { company = a.company })</li>
+                                }
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
         <div class="col-md-2">

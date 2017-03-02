@@ -27,9 +27,10 @@ namespace Bestrade.Controllers
         [HttpPost]
         public ActionResult AddPackShipment(string purchase, string sku, string shipment, string qty)
         {
-            if (qty.Length == 0)
+            int check_int;
+            if (qty.Length == 0 || !int.TryParse(qty, out check_int) || Convert.ToInt32(qty) <= 0)
             {
-                return RedirectToAction("Error", "Shared", new { message = "数量不能为空" });
+                return RedirectToAction("Error", "Shared", new { message = "数量格式不对或者为空或小于等于0" });
             }
             if (purchase.Length == 0 || sku.Length == 0 || shipment.Length == 0)
             {
@@ -39,6 +40,13 @@ namespace Bestrade.Controllers
             {
                 using (var btContext = new BestradeContext())
                 {
+                    string sql_cmd = String.Format("SELECT p_qty, s_qty FROM PackShipmentView WHERE purchase = '{0}' AND sku = '{1}'", purchase, sku);
+                    PackShipmentView view = btContext.Database.SqlQuery<PackShipmentView>(sql_cmd).FirstOrDefault();
+                    int qty_left = view.p_qty - view.s_qty - Convert.ToInt32(qty);
+                    if (qty_left < 0)
+                    {
+                        return RedirectToAction("Error", "Shared", new { message = "该Pack剩余数量低于寄出数量，请确认数量是否正确" });
+                    }
                     btContext.PackShipment.Add(new PackShipment
                     {
                         purchase = purchase,
@@ -67,14 +75,26 @@ namespace Bestrade.Controllers
         [HttpPost]
         public ActionResult UpdatePackShipment(string purchase, string sku, string shipment, string qty)
         {
-            if (qty.Length == 0)
+            int check_int;
+            if (qty.Length == 0 || !int.TryParse(qty, out check_int) || Convert.ToInt32(qty) <= 0)
             {
-                return RedirectToAction("Error", "Shared", new { message = "数量不能为空" });
+                return RedirectToAction("Error", "Shared", new { message = "数量格式不对或者为空或小于等于0" });
             }
             try
             {
                 using (var btContext = new BestradeContext())
                 {
+                    //Check if the number is right to update
+                    string sql_cmd1 = String.Format("SELECT p_qty, s_qty FROM PackShipmentView WHERE purchase = '{0}' AND sku = '{1}'", purchase, sku);
+                    string sql_cmd2 = String.Format("SELECT qty, purchase, sku, shipment FROM PackShipment WHERE purchase = '{0}' AND sku = '{1}' AND shipment = '{2}'", purchase, sku, shipment);
+                    PackShipmentView view = btContext.Database.SqlQuery<PackShipmentView>(sql_cmd1).FirstOrDefault();
+                    int qty_before_update = btContext.Database.SqlQuery<PackShipment>(sql_cmd2).FirstOrDefault().qty;
+                    int qty_available = view.p_qty - view.s_qty + qty_before_update;   
+                    if(qty_available < Convert.ToInt32(qty))
+                    {
+                        return RedirectToAction("Error", "Shared", new { message = "该Pack剩余数量低于寄出数量，请确认数量是否正确" });
+                    }
+                    //
                     var result = btContext.PackShipment.SingleOrDefault(p => p.purchase == purchase && p.sku == sku && p.shipment == shipment);
                     result.purchase = purchase;
                     result.sku = sku;

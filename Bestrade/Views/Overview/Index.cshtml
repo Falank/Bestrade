@@ -52,28 +52,44 @@
                 </tr>
                 @foreach (var a in Model)
                 {
-                    <tr>
-                        <td>@a.shipment</td>
-                        <td>@a.s_date.ToShortDateString()</td>
-                        <td>@a.company</td>
-                        <td>@a.s_qty</td>
-                        @if (a.s_remark.Length != 0)
-                        {
-                            <td>@Html.ActionLink("Click to View", "RemarkView", "Shipment", new { shipment = a.shipment }, null)</td>
-                        }
-                        else
-                        {
+                    if (a.shipment.Length != 0)
+                    {
+                        <tr>
+                            <td>@a.shipment</td>
+                            <td>@a.s_date.ToShortDateString()</td>
+                            <td>@a.company</td>
+                            <td>@a.s_qty</td>
+                            @if (a.s_remark.Length != 0)
+                            {
+                                <td>@Html.ActionLink("Click to View", "RemarkView", "Shipment", new { shipment = a.shipment }, null)</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                            @if (a.complete == true)
+                            {
+                                <td>Yes</td>
+                            }
+                            else
+                            {
+                                <td>No</td>
+                            }
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr>
+                            <td style="font-weight:bold;color:red">No Data</td>
                             <td></td>
-                        }
-                        @if (a.complete == true)
-                        {
-                            <td>Yes</td>
-                        }
-                        else
-                        {
-                            <td>No</td>
-                        }
-                    </tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    }
                 }
             </table>
         </div>

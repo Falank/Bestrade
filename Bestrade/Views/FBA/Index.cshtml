@@ -98,20 +98,20 @@
                             <td>
                                 <form action="FBA/DeleteFBA" method="post" id="@a.sku">
                                     <input type="hidden" name="sku" value="@a.sku" />
+                                    <input type="hidden" />
                                     <a style="cursor: pointer">Delete</a>
                                 </form>
                             </td>
-
-
                         </tr>
                     }
                     else
                     {
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
                             <td style="font-weight:bold;color:red">No Data</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     }
                 }
@@ -145,6 +145,7 @@
                         <td>
                             <form action="Mod/DeleteMod" method="post">
                                 <input type="hidden" name="mod_num" value="@a.mod_num" />
+                                <input type="hidden" />
                                 <a style="cursor: pointer">Delete</a>
                             </form>
                         </td>

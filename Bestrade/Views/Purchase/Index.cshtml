@@ -36,22 +36,23 @@
     </div>
     <div class="col-md-2">
         <div class="well">
-            @Html.Partial("~/Views/Purchase/Suppliers.cshtml", ViewData["suppliers"])
-        </div>
-    </div>
-    <div class="col-md-1">
-        <div class="well">
-            <table>
-                @foreach (var a in (List<Bestrade.Models.Supplier>)ViewData["suppliers"])
-                {
-                    <tr>
-                        <td>@a.supplier</td>
-                    </tr>
-                }
+            <table class="table">
+                <tr>
+                    <th>Suppliers</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul class="list-unstyled">
+                            @foreach (var a in (List<Bestrade.Models.Supplier>)ViewData["suppliers"])
+                            {
+                                <li>@Html.ActionLink(a.supplier, "PurchaseFromSupplier", new { supplier = a.supplier })</li>
+                            }
+                        </ul>
+                    </td>
+                </tr>
             </table>
         </div>
     </div>
-
     <div class="col-md-2">
         <div class="well">
             @using (Html.BeginForm("AddSupplier", "Purchase", FormMethod.Post))
