@@ -85,11 +85,10 @@ namespace Bestrade.Controllers
                 using (var btContext = new BestradeContext())
                 {
                     //Check if the number is right to update
-                    string sql_cmd1 = String.Format("SELECT p_qty, s_qty FROM PackShipmentView WHERE purchase = '{0}' AND sku = '{1}'", purchase, sku);
-                    string sql_cmd2 = String.Format("SELECT qty, purchase, sku, shipment FROM PackShipment WHERE purchase = '{0}' AND sku = '{1}' AND shipment = '{2}'", purchase, sku, shipment);
-                    PackShipmentView view = btContext.Database.SqlQuery<PackShipmentView>(sql_cmd1).FirstOrDefault();
-                    int qty_before_update = btContext.Database.SqlQuery<PackShipment>(sql_cmd2).FirstOrDefault().qty;
-                    int qty_available = view.p_qty - view.s_qty + qty_before_update;   
+                    string sql_cmd = String.Format("SELECT p_qty, s_qty FROM PackShipmentView WHERE purchase = '{0}' AND sku = '{1}'", purchase, sku);
+                    PackShipmentView view = btContext.Database.SqlQuery<PackShipmentView>(sql_cmd).FirstOrDefault();
+                    int qty_before_update = btContext.PackShipment.FirstOrDefault(q => q.purchase == purchase && q.sku == sku && q.shipment == shipment).qty;
+                    int qty_available = view.p_qty - view.s_qty + qty_before_update;
                     if(qty_available < Convert.ToInt32(qty))
                     {
                         return RedirectToAction("Error", "Shared", new { message = "该Pack剩余数量低于寄出数量，请确认数量是否正确" });
